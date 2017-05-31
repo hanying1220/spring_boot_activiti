@@ -1,0 +1,23 @@
+<div ng-controller="selectSingleController">
+    <h2>Single</h2>
+    <p>Specifies that single option can be selected at once</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                oi-options="item.name for (key, item) in shopObj"
+                ng-model="bundle"
+                placeholder="Select"
+                ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item for (key, item) in shopObj"
+ng-model="bundle"
+</div>
+<div class="col-md-4"><pre>
+{{bundle}}
+</pre></div>
+</div>
+</div>

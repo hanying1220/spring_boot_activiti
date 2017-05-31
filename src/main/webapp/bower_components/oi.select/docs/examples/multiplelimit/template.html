@@ -1,0 +1,27 @@
+<div ng-controller="selectMultiplelimitController">
+    <h2>Multiple limit</h2>
+    <p>Maximum number of options that can be selected at once</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                oi-options="item for item in shopArrShort"
+                ng-model="bundle"
+                multiple
+                multiple-limit="3"
+                placeholder="Select"
+                ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item for item in shopArrShort"
+ng-model="bundle"
+multiple
+multiple-limit="3"
+</div>
+<div class="col-md-4"><pre>
+{{bundle}}
+</pre></div>
+</div>
+</div>

@@ -1,0 +1,27 @@
+/* ---------- popup ---------- */
+.wi-popup:focus {
+  outline: 0;
+}
+.wi-popup-open {
+  /* 聚焦样式 */
+  outline: 0;
+  -moz-box-shadow: 0 0 4px 1px #c5c5c5;
+  -webkit-box-shadow: 0 0 4px 1px #c5c5c5;
+  box-shadow: 0 0 4px 1px #c5c5c5;
+}
+.wi-popup-menu {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  min-width: 160px;
+  padding: 5px 0;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  -moz-box-shadow: 2px 2px 10px 0 rgba(128, 128, 128, 0.3);
+  -webkit-box-shadow: 2px 2px 10px 0 rgba(128, 128, 128, 0.3);
+  box-shadow: 2px 2px 10px 0 rgba(128, 128, 128, 0.3);
+  background-clip: padding-box;
+}
+.wi-popup-menu-open {
+  display: block;
+}

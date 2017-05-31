@@ -1,0 +1,8 @@
+<div  ng-controller="UiGridController">
+    <button id="expandAll" type="button" class="btn btn-success" ng-click="expandAll()">Expand All1</button>
+    <button id="toggleFirstRow" type="button" class="btn btn-success" ng-click="toggleRow(0)">Toggle First Row</button>
+    <button id="toggleSecondRow" type="button" class="btn btn-success" ng-click="toggleRow(1)">Toggle Second Row</button>
+    <button id="changeGrouping" type="button" class="btn btn-success" ng-click="changeGrouping()">Change Grouping</button>
+    <button id="getAggregates" type="button" class="btn btn-success" ng-click="getAggregates()">Get Aggregates</button>
+    <div id="grid1" ui-grid="gridOptions" ui-grid-grouping class="grid" style="height: 800px;"></div>
+</div>

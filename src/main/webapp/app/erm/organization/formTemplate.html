@@ -1,0 +1,124 @@
+<form class="form-horizontal w5c-form demo-form" role="form" name="validateForm" w5c-form-validate="vm1.validateOptions">
+    <div class="modal-body">
+        <fieldset>
+            <legend>基础信息</legend>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="author">所属机构</label>
+                    <div class="col-sm-9 controls">
+                        <input class="form-control"  type="text" id="author" ng-model="vm1.user.userUrl" ng-disabled="true"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="userCode">用户编号</label>
+                    <div class="col-sm-9 controls">
+                        <input class="form-control" id="userCode" type="text" name="userCode" ng-pattern="/[0-9a-zA-Z]$/" ng-model="vm1.user.code" placeholder="用户编号数字加英文"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="login">登录名<a class="text-muted">*</a></label>
+                    <div class="col-sm-9 controls">
+                        <input class="form-control" id="login" name="login" ng-pattern="/[0-9A-Za-z]$/" ng-model="vm1.user.login"
+                               w5c-unique-check="{url:''}" type="text" required="用户名数字加英文"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-offset-2">
+                <div  class="col-sm-7">
+                    <div class="uploadImg">
+                        <img ng-src="{{vm1.user.imageUrl}}" style="width:130px;height:130px;margin:0 auto;display:block;" />
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div style="margin-top: 40px;">
+                    <div class="btn btn-sm btn-primary btn btn-sm btn-primary" >
+                        <input type="file"  style="position: absolute;left: 0;top: 40px; opacity: 0;"  file-model="myFile"  />上传文件<br/>
+                    </button>
+                   </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>个人信息</legend>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="name">姓名<a class="text-muted"style="color: #fa0000">*</a></label>
+                    <div class="col-sm-9 controls" >
+                        <input class="form-control" id="name" name="name" ng-model="vm1.user.name"
+                               type="text" placeholder="请输入姓名" required=""/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="idCard">身份证</label>
+                    <div class="col-sm-9 controls" >
+                        <input class="form-control" id="idCard" name="idCard" ng-pattern="/^[1-9]{1}[0-9]{14}$|^[1-9]{1}[0-9]{16}([0-9]|[xX])$/" type="text" ng-model="vm1.user.idCard"placeholder="15位或18位"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="tel">电话</label>
+                    <div class="col-sm-9 controls" >
+                        <input class="form-control" id="tel" name="tel" type="text" ng-pattern="/^([0-9]{3,4}-)?[0-9]{7,8}$/" ng-model="vm1.user.telePhone" placeholder="027-6969696"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="email">邮箱</label>
+                    <div class="col-sm-9 controls" >
+                        <input type="email" name="email" ng-model="vm1.user.email" id="email"  class="form-control"
+                               placeholder="输入邮箱">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-offset-2">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="idCard">性别</label>
+                    <div class="col-sm-9 controls" >
+                        <select class="form-control"  ng-model="vm1.user.gender" name="type" ng-options="m.value as m.text for m in types">
+                            <option value="">---请选择---</option>
+                            <option ng-repeat="type in types" value="{{type.value}}">{{type.text}}</option>
+                        </select>
+                    </div>
+                </div>
+                <!--  <div class="form-group">
+                      <label class="col-sm-3 control-label">下拉框单选</label>
+                      <div class="col-sm-3">
+                          <oi-select
+                              name="select"
+                              oi-options="item.name for item in shopArr track by item.id"
+                              ng-model="bundle"
+                              required=""
+                              placeholder="请选择">
+                          </oi-select>
+                      </div>
+                  </div>-->
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="phone">手机号</label>
+                    <div class="col-sm-9 controls" >
+                        <input class="form-control" id="phone" type="text" name="phone"  ng-pattern="/^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/"  ng-model="vm1.user.phone"placeholder="例:15375486326"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">生日</label>
+                    <div class="col-sm-9 controls" >
+                        <div class="input-group col-sm-12">
+                            <input type="text"  class="form-control" uib-datepicker-popup="{{format}}" ng-model="birthday" is-open="popup.opened"  id="birthday" name="birthday"    close-text="关闭"
+                               clear-text="清空"  current-text="今天" alt-input-formats="altInputFormats" style="width:80%"/>
+                            <button type="button" class="btn" ng-click="open()" style="width:20%;"><i class="glyphicon glyphicon-calendar"></i></button>
+                         </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="qq">QQ</label>
+                    <div class="col-sm-9 controls" >
+                        <input class="form-control" id="qq" type="text" name="qq" ng-pattern="/[0-9]$/" ng-minLength="6" ng-model="vm1.user.qqNum" placeholder="例：87457845"/>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <ui-button class="btn btn-sm btn-success" icoclass="" label="保存" w5c-form-submit="vm1.saveUser()"></ui-button>
+        <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消" ng-click = "userClose()"></ui-button>
+    </div>
+</form>

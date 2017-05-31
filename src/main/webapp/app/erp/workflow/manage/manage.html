@@ -1,0 +1,30 @@
+<div jhi-layout col="12">
+    <wi-tabset closeable="false" height="100%">
+        <wi-tab wiid="tab1" heading="流程管理" active="true">
+            <div class="m">
+                <div class="btn btn-sm btn-primary" ngf-select="upload($file)" ng-model="file" name="file">
+                    部署
+                </div>
+                <ui-button class="btn btn-normal btn-primary btn-addon" icoclass="iconfont icon-shuaxin" label="刷新" ng-click="shuaxin()"></ui-button>
+            </div>
+            <div ui-grid="gridOptions" class="grid"  style="width: 100%;height: 720px;"></div>
+        </wi-tab>
+        <wi-tab wiid="tab1" heading="模板管理">
+            <div class="m">
+                <ui-button class="btn btn-normal btn-primary btn-addon" icoclass="iconfont icon-xinzeng" label="新模板" ng-click="create()"></ui-button>
+                <ui-button class="btn btn-normal btn-primary btn-addon" icoclass="iconfont icon-shuaxin" label="刷新" ng-click="shuaxin3()"></ui-button>
+            </div>
+            <div ui-grid="modelOptions" class="grid"  style="width: 100%;height: 720px;"></div>
+        </wi-tab>
+        <wi-tab wiid="tab1" heading="进行中流程">
+            <div class="m">
+                <ui-button class="btn btn-normal btn-primary btn-addon" icoclass="iconfont icon-shuaxin" label="刷新" ng-click="shuaxin2()"></ui-button>
+            </div>
+            <div ui-grid="runingOptions" class="grid"  style="width: 100%;height: 720px;"></div>
+        </wi-tab>
+    </wi-tabset>
+</div>
+
+
+
+

@@ -1,0 +1,45 @@
+<form class="form-horizontal w5c-form demo-form" role="form" id="addOrgzForm" name="validateForm"
+      w5c-form-validate="vm1.validateOptions">
+
+    <div class="modal-body m-b-lg">
+            <div class="form-group col-sm-6">
+                <label class="col-sm-3 control-label" for="orgzUrl">组织路径</label>
+                <div class="col-sm-8 controls">
+                    <input class="form-control" type="text" id="orgzUrl" ng-model="orgz.orgzUrl"
+                           ng-disabled="true"/>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-offset-1 col-sm-3 control-label" for="code">组织编号</label>
+
+                <div class="col-sm-8 controls">
+                    <input class="form-control" id="code" type="text" ng-model="orgz.code"/>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-3 control-label">组织类型
+                    <a class="text-muted">*</a>
+                </label>
+
+                <div class="col-sm-8 controls">
+                    <select class="form-control"  ng-model="orgz.orgzType" name="orgzType" ng-options="m.value as m.text for m in orgzTypes" required="">
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-offset-1 col-sm-3 control-label" for="name">组织名称
+                    <a class="text-muted">*</a>
+                </label>
+                <div class="col-sm-8 controls">
+                    <input class="form-control" id="name" name="name" type="text" ng-model="orgz.name" required=""/>
+                </div>
+            </div>
+        </div>
+
+    <div class="modal-footer">
+        <ui-button class="btn btn-sm btn-success" icoclass="" label="保存" w5c-form-submit="saveOrgz()"></ui-button>
+        <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消" ng-click = "closeLayer()"></ui-button>
+    </div>
+</form>

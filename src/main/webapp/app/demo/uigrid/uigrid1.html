@@ -1,0 +1,49 @@
+<div ng-cloak>
+
+    <p>表格的行内编辑、添加删除行、分页、排序、文字tooltip、单选多选、序号递增、拖拽上下移动</p>
+    <div ng-controller="UiGridController">
+        <!-- 添加删除重置替换-->
+        <p>
+            <button type="button" id="swapData" class="btn btn-success" ng-click="swapData()">替换</button>
+            <button type="button" id="addData" class="btn btn-success" ng-click="addData()">添加</button>
+            <button type="button" id="reset" class="btn btn-success" ng-click="reset()">重置</button>
+        </p>
+
+        <p>
+            <button type="button" class="btn btn-success" ng-click="toggleMultiSelect()">多选切换</button>  <strong>MultiSelect:</strong> <span ng-bind="gridApi.grid.options.multiSelect"></span>
+            <button type="button" class="btn btn-success" ng-click="toggleRow1()">选中第一行</button>
+            <button type="button" class="btn btn-success" ng-disabled="!gridApi.grid.options.multiSelect" ng-click="selectAll()">Select All</button>
+            <button type="button" class="btn btn-success" ng-click="clearAll()">Clear All</button>
+        </p>
+
+        <p>数据条数: {{ gridOptions.data.length | number }}</p>
+
+        <p>最后更改的数据:{{msg.lastCellEdited}}</p>
+
+        <div
+            ui-grid="gridOptions"
+            class="grid" id="grid"
+            ui-grid-pagination
+            ui-grid-edit
+            ui-grid-draggable-rows
+            ui-grid-selection
+            ui-grid-exporter  style="width: 100%;height: 300px;">
+        </div>
+
+        <div ng-if='columnChanged'>
+            Column Visibility Changed - name: {{ columnChanged.name }} visible: {{ columnChanged.visible }}
+        </div>
+        <div>Last file uploaded:{{lastFile}}</div>
+        <input type="checkbox" ng-model="dragEnable"/> 是否可以拖拽
+    </div>
+
+    <div >
+            <p>分组</p>
+            <div ng-controller="UiGridTreeController">
+                <button id="expandAll" type="button" class="btn btn-success" ng-click="expandAll()">Expand All</button>
+                <button id="toggleFirstRow" type="button" class="btn btn-success" ng-click="toggleRow(0)">Toggle First Row</button>
+                <button id="toggleExpandNoChildren" type="button" class="btn btn-success" ng-click="toggleExpandNoChildren()">Toggle Expand No Children</button>
+                <div id="grid1" ui-grid="gridOptions" ui-grid-tree-view class="grid" style="width: 100%;height: 300px;"></div>
+            </div>
+        </div>
+</div>

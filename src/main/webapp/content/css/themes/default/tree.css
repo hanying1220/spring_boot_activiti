@@ -1,0 +1,73 @@
+/* ---------- tree ---------- */
+.wi-tree > li {
+    cursor: pointer;
+    word-break: break-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.wi-tree > li .wi-tree{
+    /*padding-left:20px;*/
+}
+.wi-tree-item:hover {
+  background-color: #e2ebf2;
+}
+.wi-tree-item {
+    height: 30px;
+    line-height:30px;
+    font-size:12px;
+    color:#333;
+    font-family: "Microsoft YaHei";
+}
+.wi-tree-current,
+.wi-tree-current:hover {
+  background-color: #e2ebf2;
+}
+.wi-tree-loading {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  background: #ffffff url('images/tree/loading.gif') no-repeat center center;
+}
+.wi-tree-transparent-50 {
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+span.wi-tree-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  color:#999;
+}
+span.wi-tree-icon[class^="icon-"],
+span.wi-tree-icon[class*=" icon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+}
+
+/*icon*/
+.wi-tree .icon-plus,.wi-tree .icon-minus,.wi-tree .icon-folder-close,.wi-tree .icon-folder-close,.wi-tree .icon-folder-open,.wi-tree .icon-file{
+    width:14px!important;height:30px!important;
+    background-repeat: no-repeat!important;
+    background-position: center center!important;
+    background-size:14px auto!important;
+    display: inline-block!important;
+}
+.wi-tree .icon-plus{
+    background-image: url("/content/images/open_tree.png");
+}
+.wi-tree .icon-minus{
+    background-image: url("/content/images/close_tree.png");
+}
+.wi-tree .icon-folder-close,.wi-tree .icon-folder-open{
+    background:url("/content/images/tree_node.png");
+}
+.wi-tree .icon-file{
+    background:url("/content/images/tree_docu.png");
+}
+.wi-tree .icon-plus:before,.wi-tree .icon-minus:before,.wi-tree . icon-folder-close:before{
+    content:""!important;
+}

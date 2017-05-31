@@ -1,0 +1,112 @@
+2017-05-27 18:02:47 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]
+2017-05-27 18:02:47 jdbc[18]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]
+2017-05-27 18:08:07 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]
+2017-05-27 18:08:07 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]
+2017-05-31 11:23:14 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_GROUP" not found; SQL statement:
+select g.*
+    from ACT_ID_GROUP g, ACT_ID_MEMBERSHIP membership
+    where g.ID_ = membership.GROUP_ID_
+      and membership.USER_ID_ = ? [42102-193]
+2017-05-31 12:01:19 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_GROUP" not found; SQL statement:
+select g.*
+    from ACT_ID_GROUP g, ACT_ID_MEMBERSHIP membership
+    where g.ID_ = membership.GROUP_ID_
+      and membership.USER_ID_ = ? [42102-193]
+2017-05-31 12:25:40 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]
+2017-05-31 12:25:40 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]
+2017-05-31 12:25:56 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]
+2017-05-31 12:25:56 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]
+2017-05-31 12:26:01 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]
+2017-05-31 12:26:01 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACT_ID_USER" not found; SQL statement:
+select RES.* 
+     
+    from ACT_ID_USER RES 
+     
+     WHERE RES.ID_ = ? 
+   
+     order by RES.ID_ asc 
+    LIMIT ? OFFSET ? [42102-193]

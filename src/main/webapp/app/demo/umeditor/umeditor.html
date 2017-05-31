@@ -1,0 +1,15 @@
+<div class="all">
+    <div>
+        <button class="btn btn-normal btn-success" ng-click="on()">可用</button>
+        <button class="btn btn-normal btn-danger" ng-click="off()">不可用</button>
+    </div>
+    <script type="text/html" style="margin:auto;height:500px;width:100%;" ng-model="all_text"
+            meta-umeditor
+            eid="myid"
+            meta-umeditor-config='all_config'
+            meta-umeditor-placeholder="">
+    </script>
+    <div class="model">
+        <div ng-bind="all_text"></div>
+    </div>
+</div>

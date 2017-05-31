@@ -1,0 +1,86 @@
+/* ---------- progress ---------- */
+.wi-progress {
+  display: inline-block;
+  position: relative;
+}
+.wi-progress-bar {
+  display: inline-block;
+  height: 9px;
+  vertical-align: middle;
+  font-size: 0;
+  overflow: hidden;
+  width: 100px;
+  margin-left: .5em;
+  margin-right: .5em;
+  border: solid 1px #daecf4;
+  background-color: #ffffff;
+}
+.wi-progress-value {
+  height: 100%;
+  width: 0;
+  float: left;
+  border: none;
+  background: #ffd256;
+}
+.wi-progress-center {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.wi-progress-top {
+  text-align: center;
+}
+.wi-progress-left {
+  display: inline-block;
+  margin-right: .5em;
+  vertical-align: middle;
+}
+.wi-progress-bottom {
+  text-align: center;
+}
+.wi-progress-right {
+  display: inline-block;
+  margin-left: .5em;
+  vertical-align: middle;
+}
+.wi-progress-bar-wave {
+  background-image: -webkit-linear-gradient(45deg, #daecf4 24%, transparent 25%, transparent 49%, #daecf4 50%, #daecf4 74%, transparent 75%);
+  background-image: -o-linear-gradient(45deg, #daecf4 24%, transparent 25%, transparent 49%, #daecf4 50%, #daecf4 74%, transparent 75%);
+  background-image: linear-gradient(45deg, #daecf4 24%, transparent 25%, transparent 49%, #daecf4 50%, #daecf4 74%, transparent 75%);
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+  -webkit-animation: progress-bar-wave 1s infinite linear;
+  animation: progress-bar-wave 1s infinite linear;
+}
+@-webkit-keyframes progress-bar-wave {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+@keyframes progress-bar-wave {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+:not(.wi-progress-bar-stage) > .wi-progress-remain {
+  display: none;
+}
+.wi-progress-remain {
+  display: none;
+  height: 100%;
+  float: left;
+  background-repeat: no-repeat;
+  background-image: -webkit-linear-gradient(left, transparent, #daecf4);
+  background-image: -o-linear-gradient(left, transparent, #daecf4);
+  background-image: linear-gradient(to right, transparent, #daecf4);
+}

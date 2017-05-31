@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="transactionManager" ref="transactionManager"/>
+
+        <!--自动部署方式 -->
+        <!--<property name="deploymentResources" value="classpath*:/processes/*"/>-->
+
+        <property name="activityFontName" value="宋体"/>
+        <property name="labelFontName" value="宋体"/>
+        <property name="annotationFontName" value="宋体"/>
+
+        <property name="dbIdentityUsed" value="false" />
+        <property name="databaseSchema" value="ACT"/>
+        <property name="databaseSchemaUpdate" value="none"/><!-- 第一次执行 设置为true -->
+        <!-- 引擎默认名称为default，ProcessEngines.getDefaultProcessEngine()查询时会先检索main/resources，然后再检索test/resources的
+        activiti.cfg.xml和activiti-context.xml文件，所以当main/resources监测不到指定文件时就会导致该引擎被当做web应用的引擎对象，这样会导致有两个引擎
+        所以把引擎的名称改为非默认的“default”
+        -->
+        <property name="jobExecutorActivate" value="false"/>
+        <property name="asyncExecutorActivate" value="false"/>
+        <property name="asyncExecutorEnabled" value="false"/>
+    </bean>
+</beans>

@@ -1,0 +1,83 @@
+
+{
+    "data":[
+
+      {
+        "id":"user0",
+        "legend": {
+        "name": "基础信息1"
+        },
+        "class": "col-sm-6",
+        "list": [
+          {
+            "labeltext": "aaa",
+            "attr": {
+              "placeholder": "name",
+              "name": "Username",
+              "type": "text",
+              "title": 1,
+              "ng-model": "loginname",
+              "isRequired": true
+            }
+          },
+          {
+            "labeltext": "aa11a",
+            "attr": {
+              "placeholder": "name",
+              "name": "Username",
+              "type": "select",
+                "option":[
+                  {
+                    "val":1,
+                    "content":"243324"
+                  },
+                  {
+                    "val":13,
+                    "content":"2"
+                  }
+
+                ],
+
+              "title": 1,
+              "ng-model": "loginname",
+              "isRequired": true
+            }
+          }
+        ]
+      },
+      {
+        "id":"user2",
+        "legend": {
+          "name": "基础信息2"
+        },
+        "class": "col-sm-6",
+        "list": [
+          {
+            "labeltext": "aaa",
+            "attr": {
+              "placeholder": "name",
+              "name": "Username",
+              "type": "text",
+              "title": 1,
+              "ng-model": "loginname",
+              "isRequired": true
+            }
+          },
+          {
+            "labeltext": "aa11a",
+            "attr": {
+              "placeholder": "name",
+              "name": "Username",
+              "type": "text",
+              "title": 1,
+              "ng-model": "loginname",
+              "isRequired": true
+            }
+          }
+        ]
+      }
+
+    ]
+  }
+
+

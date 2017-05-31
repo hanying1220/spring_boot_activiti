@@ -1,0 +1,37 @@
+<div class="modal-body" style="height:calc(100% - 40px)">
+    <div class="pull-left" style="width:46%">
+        <h2 style="font-weight:bold;font-size:14px;color:#666;margin-bottom:10px;">已授权角色</h2>
+        <div
+            ui-grid="gridOptionsYesRole"
+            class="grid"
+            ui-grid-selection
+            style="height:100%">
+        </div>
+    </div>
+    <div class="pull-left todoIcon" style="width:8%;margin-top:20%;">
+        <i class="icon-you iconfont" title="右移" ng-click="left()"
+        style="font-size:30px;
+        color:#16aad8;
+        display:block;
+        text-align:center;"></i>
+        <i class="iconfont icon-zuo" title="左移" ng-click="right()"
+           style="font-size:30px;
+        color:#16aad8;
+        display:block;
+        text-align:center;"></i>
+    </div>
+    <div class="pull-right" style="width:46%">
+        <h2 style="font-weight:bold;font-size:14px;color:#666;margin-bottom:10px;">未授权角色</h2>
+        <div
+            ui-grid="gridOptionsNoRole"
+            class="grid"
+            ui-grid-selection
+            style="height:100%">
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <ui-button class="btn btn-sm btn-success" icoclass="" label="保存" ng-click="saveUserRole()"></ui-button>
+    <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消" ng-click="closeToRoleDailog()"></ui-button>
+</div>
+

@@ -1,0 +1,17 @@
+<form class="form-horizontal w5c-form demo-form" role="form" name="validateForm" w5c-form-validate="vm1.validateOptions">
+    <div class="modal-body">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="activityId">activityId<a class="text-muted"style="color: #fa0000">*</a></label>
+                <div class="col-sm-9 controls" >
+                    <input class="form-control" id="activityId" name="activityId" ng-model="vm1.model.activityId"
+                           type="text" placeholder="" required=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <ui-button class="btn btn-sm btn-success" icoclass="" label="确定" w5c-form-submit="jump()"></ui-button>
+        <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消" ng-click = "modelClose()"></ui-button>
+    </div>
+</form>

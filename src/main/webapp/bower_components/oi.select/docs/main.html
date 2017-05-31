@@ -1,0 +1,61 @@
+<style>
+    oi-select {
+        margin-bottom: 20px;
+    }
+
+    oi-select.ng-invalid {
+        border: 1px solid red;
+        border-radius: 5px;
+    }
+
+    .main {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .menu {
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+    }
+    .content {
+        margin-left: 30px;
+    }
+
+    @media (min-width: 768px) {
+        .content {
+            width: 518px;
+        }
+    }
+    @media (min-width: 992px) {
+        .content {
+            width: 742px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .content {
+            width: 950px;
+        }
+    }
+</style>
+
+<div>
+    <div>
+        <h1 id="top">oi.select demo</h1>
+        <p><a href="//github.com/tamtakoe/oi.select">GitHub project</a></p>
+        <hr/>
+    </div>
+    <div class="main">
+        <div class="menu list-group">
+            <a ng-repeat="item in demo.menu"
+               href="#/select/#{{item.urlName}}"
+               class="list-group-item capitalize"
+               ng-class="{active: item.urlName == demo.name}">{{item.name}}</a>
+        </div>
+        <div class="content">
+            <div ng-include="demo.viewUrl"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<ui-permission   permissions="permission">
+    <div jhi-layout col="3" class="authorBox">
+        <ui-panel>
+            <ui-panel-heading>角色列表</ui-panel-heading>
+            <form class="form-inline m clearfix" role="form">
+                <div class="form-group col-sm-6 m-r-3">
+                    <input type="text" class="form-control"  ng-model="search.roleSearch" placeholder="请输入角色名称" ng-keyup="roleMykey($event)" style="width:100%"/>
+                </div>
+                <ui-button class="btn btn-primary col-sm-2" label="搜索" ng-click="searchRole()"></ui-button>
+                <ui-button class="btn btn-primary col-sm-3 pull-right" icoclass="iconfont icon-xinzeng" permission-code="add"  ng-click="addRole('add')" label="新增角色"></ui-button>
+             </form>
+            <div  ui-grid="roleGrid" class="grid"   ui-grid-selection  style="height:calc(100% - 60px);"></div>
+        </ui-panel>
+    </div>
+
+
+    <div jhi-layout col="9">
+        <ui-panel>
+            <ui-panel-heading>用户列表</ui-panel-heading>
+            <form class="form-inline m-b clearfix">
+                <ui-button class="btn btn-lg btn-primary btn-addon btn btn-lg btn-primary btn-addon  pull-left m-r" icoclass="iconfont icon-xinzeng" ng-disabled="roleDisable" label="新增用户" permission-code="add" ng-click="addUser()"></ui-button>
+                <ui-button class="btn btn-lg btn-danger btn-addon pull-left" icoclass="iconfont icon-del" ng-click="deleteUserList()" ng-disabled="roleUserDisable" permission-code="delete" label="批量删除"></ui-button>
+                <ui-button class="btn btn-sm btn-primary pull-right" ng-click="searchFun()" label="搜索"></ui-button>
+                <div class="form-group pull-right col-sm-3 m-r-3">
+                   <!-- <input type="text" class="form-control" ng-model="search.searchName" style="width:100%" placeholder="搜索用户名称"/>-->
+                    <input type="text" class="form-control"  ng-model="search.userName"  placeholder="搜索用户名称" style="width:100%" ng-keyup="roleUserMykey($event)"/>
+                </div>
+            </form>
+           <div ui-grid="userGrid"  ui-grid-selection class="grid m-around" style="height:calc(100% - 60px);"></div>
+        </ui-panel>
+    </div>
+</ui-permission>
+
+

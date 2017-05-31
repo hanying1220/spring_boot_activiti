@@ -1,0 +1,44 @@
+
+    <div jhi-layout col="2">
+        <ui-panel>
+            <ui-panel-heading>
+                菜单结构
+                <div class="toolbtn">
+                    <i class="iconfont icon-shuaxin" ng-click="refreshTree()" title="刷新"></i>
+                </div>
+            </ui-panel-heading>
+            <ui-tree dataProvider="treeData" onitemclick="onitemclick"  onloadbranch="onloadbranch" pidfield="parentId" labelfield="name">
+            </ui-tree>
+        </ui-panel>
+    </div>
+
+
+
+    <div jhi-layout col="10">
+
+        <ui-permission   permissions="permission">
+            <ui-panel>
+                <ui-panel-heading>
+                  菜单列表
+               </ui-panel-heading>
+                <div class="btn-group dropdown m-b" dropdown   ng-show="isSysAdmin">
+                    <button class="btn btn-lg btn-primary btn-addon" title="新增菜单"  permission-code="Add" dropdown-toggle style="width:110px;">
+                        <i class="iconfont icon-xinzeng"></i>
+                        新增菜单
+                        <span class="iconfont icon-xiala" style="font-size:42px;position:relative;top:4px;right: 8px;"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <!--<li ng-click="add('group')"><i class="iconfont icon-wenjianjia" ></i>菜单组</li>
+                        <li ng-click="add('item')"><i class="iconfont icon-wenjian" ></i>菜单项</li>-->
+                        <li ng-click="addGroup()"><i class="iconfont icon-wenjianjia" ></i>菜单组</li>
+                        <li ng-click="addItem()"><i class="iconfont icon-wenjian" ></i>菜单项</li>
+                    </ul>
+                </div>
+                <div ui-grid="gridOptions" class="grid m-around"  style="height: calc(100% - 60px)"></div>
+            </ui-panel>
+        </ui-permission>
+    </div>
+
+
+
+

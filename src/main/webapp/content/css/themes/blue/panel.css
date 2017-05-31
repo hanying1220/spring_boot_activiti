@@ -1,0 +1,43 @@
+/* ---------- panel ---------- */
+.wi-panel-close {
+  display: none;
+}
+.wi-panel-head {
+  padding: 1px 5px 2px 5px;
+  border: solid 1px #94c0d2;
+  font-size: 15px;
+  background-color: #daecf4;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37ffffff', endColorstr='#00ffffff', GradientType=0);
+  color: #003f59;
+  position: relative;
+}
+img.wi-panel-icon {
+  vertical-align: middle;
+}
+.wi-panel-tools {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+.wi-panel-tools > span {
+  color: #558193;
+  cursor: pointer;
+}
+.wi-panel-tools > span:not(:first-child) {
+  margin-left: .3em;
+}
+.wi-panel-tools > span:hover {
+  color: #003f59;
+}
+.wi-panel-box {
+  border: solid 1px #94c0d2;
+  border-top: none;
+  background-color: #ffffff;
+  overflow: auto;
+}
+.wi-panel-h > .wi-panel-head {
+  height: 30px;
+  overflow: hidden;
+}

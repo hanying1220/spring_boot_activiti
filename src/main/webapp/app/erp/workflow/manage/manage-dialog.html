@@ -1,0 +1,19 @@
+<form class="form-horizontal w5c-form demo-form" role="form"  name="validateForm"
+      w5c-form-validate="vm.validateOptions">
+    <fieldset>
+    <div class="modal-body m-b-lg">
+        <div class="form-group col-sm-6">
+            <label class="col-sm-3 control-label" for="text"> 文件
+                <a class="text-muted">*</a></label>
+            <div class="col-sm-8 controls">
+                <input class="form-control" type="file" name="file" required=""/>
+            </div>
+        </div>
+    </div>
+   </fieldset>
+    <div class="modal-footer">
+        <ui-button class="btn btn-sm btn-success" icoclass="" label="保存" w5c-form-submit="save()"></ui-button>
+        <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消" ng-click = "clear()"></ui-button>
+    </div>
+
+</form>

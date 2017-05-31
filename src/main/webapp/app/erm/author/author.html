@@ -1,0 +1,32 @@
+
+<div jhi-layout col="3" class="authorBox">
+    <ui-panel>
+        <ui-panel-heading>角色列表</ui-panel-heading>
+        <!--<wi-searchinput wi-tips="请输入角色名称" onsearch="searchFun"  ></wi-searchinput>-->
+        <form class="form-inline m clearfix" role="form">
+            <div class="form-group pull-left" style="width:75%">
+                <input id="name" type="text" class="form-control" placeholder="请输入角色名称" style="width:100%"/>
+            </div>
+            <ui-button class="btn btn-sm btn-primary pull-right" ng-click="searchFun()" width="20%" label="搜索"></ui-button>
+        </form>
+
+        <div ui-grid="roleGrid" ui-grid-selection class="grid" style="height:calc(100% - 60px);"></div>
+    </ui-panel>
+</div>
+<div jhi-layout col="9" class="authorBox">
+    <wi-tabset closeable="false" height="100%">
+        <wi-tab wiid="tab1" heading="功能权限" active="true">
+            <div class="m" ng-show="isTenantAdmin">
+                <ui-button class="btn btn-normal btn-success btn-addon m-r-sm" icoclass="iconfont icon-baocun" label="保存" ng-click="saveRoleMenu()"></ui-button>
+                <ui-button class="btn btn-normal btn-danger btn-addon" icoclass="iconfont icon-quxiao" label="取消" ng-click="cancelRoleMenu()"></ui-button>
+            </div>
+            <div ui-grid="gridOptions" ui-grid-grouping class="grid" style="height:calc(100% - 60px);"></div>
+        </wi-tab>
+        <wi-tab wiid="tab2" heading="数据权限">
+            <div class="m" ng-show="isTenantAdmin">
+                <ui-button class="btn btn-lg btn-primary btn-addon m-r-sm" icoclass="iconfont icon-baocun" label="配置权限" ng-click="configPermission()"></ui-button>
+            </div>
+            <div ui-grid="permissionGrid" ui-grid-selection class="grid permissionGrid" style="height:calc(100% - 60px);"></div>
+        </wi-tab>
+    </wi-tabset>
+</div>

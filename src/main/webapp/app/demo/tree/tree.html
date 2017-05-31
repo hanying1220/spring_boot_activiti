@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span>请假申请</span>
+    </div>
+    <div class="panel-body">
+        <input type="button" ng-click="startp()" value="发起一个测试任务" />
+        <h2 style="font-weight:bold;font-size:14px;color:#666;margin-bottom:10px;">可领取任务</h2>
+        <div
+            ui-grid="gridOptionsWei"
+            ui-grid-pagination
+            class="grid m-around"
+            style="height:400px;">
+        </div>
+
+        <h2 style="font-weight:bold;font-size:14px;color:#666;margin-bottom:10px;">我的任务</h2>
+        <div
+            ui-grid="gridOptionsYi"
+            ui-grid-pagination
+            class="grid m-around"
+            style="height:400px;">
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,101 @@
+# ===================================================================
+# Spring Boot configuration for the "prod" profile.
+#
+# This configuration overrides the application.yml file.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+
+spring:
+    profiles:
+#        active: prod
+        include: swagger
+    devtools:
+        restart:
+            enabled: false
+        livereload:
+            enabled: false
+    datasource:
+        driverClassName: oracle.jdbc.OracleDriver
+        dataSourceClassName: oracle.jdbc.pool.OracleDataSource
+        url: jdbc:oracle:thin:@172.16.0.235:1521:orcl
+        name:
+        username: erp
+        password: erp
+        hikari:
+            data-source-properties:
+                cachePrepStmts: true
+                prepStmtCacheSize: 250
+                prepStmtCacheSqlLimit: 2048
+                useServerPrepStmts: true
+    jpa:
+        database-platform: org.hibernate.dialect.Oracle10gDialect
+        database: ORACLE
+        show-sql: false
+        properties:
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+            hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+            hibernate.ejb.interceptor: cdhl.springboot_activiti.interceptor.TenantInterceptor
+    mail:
+        host: localhost
+        port: 25
+        username:
+        password:
+    thymeleaf:
+        cache: true
+
+liquibase:
+    contexts: prod
+
+server:
+    port: 9000
+    compression:
+        enabled: true
+        mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+        min-response-size: 1024
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    http:
+        cache: # Used by the CachingHttpHeadersFilter
+            timeToLiveInDays: 1461
+    cache: # Hibernate 2nd level cache, used by CacheConfiguration
+        timeToLiveSeconds: 3600
+        ehcache:
+            maxBytesLocalHeap: 256M
+    security:
+        rememberMe:
+            # security key (this key should be unique for your application, and kept secret)
+            key: 4478fd7a33cadb6b432a63182c0f37ac33b39ef2
+    mail: # specific JHipster mail property, for standard properties see MailProperties
+        from: erp@localhost
+    metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
+        jmx.enabled: true
+        spark:
+            enabled: false
+            host: localhost
+            port: 9999
+        graphite:
+            enabled: false
+            host: localhost
+            port: 2003
+            prefix: erp
+        logs: # Reports Dropwizard metrics in the logs
+            enabled: false
+            reportFrequency: 60 # in seconds
+    logging:
+        logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
+            enabled: false
+            host: localhost
+            port: 5000
+            queueSize: 512

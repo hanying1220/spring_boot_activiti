@@ -1,0 +1,27 @@
+<div ng-style="{'width': conf.width,'height': conf.height}" class="wi-tabset"
+     ng-class="{'h':'wi-tabset-h','v':'wi-tabset-v wi-clearf','vh':'wi-tabset-vh wi-clearf'}[conf.vertical?conf.height?'vh':'v':'h']">
+    <div class="wi-tabhead"
+         ng-style="{'height':!conf.vertical?conf.tabheadsize+'px':'','line-height': !conf.vertical?conf.tabheadsize+'px':'',
+            'width': conf.vertical?conf.tabheadsize+'px':''}">
+        <span ng-if="scrollable" ng-click="backward()" class="wi-unselectable wi-tabctrl-ver icon-chevron-up"></span><!-- 横向超出才显示 -->
+        <span ng-if="scrollable" ng-click="forward()" class="wi-unselectable wi-tabctrl-ver icon-chevron-down"></span>
+        <span ng-if="scrollable" ng-click="backward()" class="wi-unselectable wi-tabctrl-hor icon-chevron-left"></span><!-- 纵向超出才显示 -->
+        <span ng-if="scrollable" ng-click="forward()" class="wi-unselectable wi-tabctrl-hor icon-chevron-right"></span>
+        <div class="wi-tabstage">
+            <ul ng-class="{true:'wi-tabul-ver',false:'wi-tabul-hor wi-clearf'}[conf.vertical]"
+                ng-style="ulStyle" style="overflow: visible;"
+                ng-transclude></ul>
+            <wi-menu ng-show="conf.enablerightmenu" wi-right-menu dataprovider="menudata" onselect="rightmenuselect"></wi-menu>
+        </div>
+    </div>
+    <div class="wi-tabcont"
+         ng-style="{'height':(conf.height&&!conf.vertical)?'calc(100% - '+conf.tabheadsize+'px )':'','margin-left':conf.vertical?conf.tabheadsize+'px':''}">
+        <div ng-repeat="tab in tabs"
+             class="wi-tabpane"
+             ng-show="tab.active"
+             ng-style = "{'height':(conf.height||conf.vertical)?'100%':''}"
+             wi-tab-content-transclude="tab">
+            <div ng-if="tab.data.src"  ng-include="tab.data.src"></div>
+        </div>
+    </div>
+</div>

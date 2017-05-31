@@ -1,0 +1,45 @@
+/* ---------- searchinput ---------- */
+.wi-searchinput {
+  position: relative;
+  display: inline-block;
+  background-color: #ffffff;
+}
+.wi-searchinput > input[type='text'] {
+  border: solid 1px #cccccc;
+  border-right: none;
+  box-shadow: none;
+  width: calc(100% - 22px);
+}
+.wi-searchinput > .icon-search {
+  border: solid 1px #cccccc;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.08) 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.08) 100%);
+  color: #000000;
+  width: 23px;
+  cursor: pointer;
+}
+.wi-searchinput > .icon-search:hover {
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.06) 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.06) 100%);
+  color: #000000;
+}
+.wi-searchinput > .icon-search:active {
+  color: #ffffff;
+  background-color: #0092dc;
+  outline: 0;
+  -moz-box-shadow: 0 0 4px 1px #c5c5c5;
+  -webkit-box-shadow: 0 0 4px 1px #c5c5c5;
+  box-shadow: 0 0 4px 1px #c5c5c5;
+}
+.wi-searchinput > .icon-search:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -9px;
+  margin-left: -6px;
+}

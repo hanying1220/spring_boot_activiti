@@ -1,0 +1,16 @@
+<li>
+    <div class="item-container" ng-class="{active: item.isActive, selected: item.selected}"
+         ng-click="clickSelectItem(item, $event)" ng-mouseover="onMouseOver(item, $event)">
+        <span ng-if="showExpand(item)" class="expand" ng-class="{'expand-opened': item.isExpanded}"
+              ng-click="onExpandClicked(item, $event)"></span>
+
+        <div class="item-details"><input class="tree-checkbox" type="checkbox" ng-if="showCheckbox()"
+                                         ng-checked="item.selected"/>{{item.name}}
+        </div>
+    </div>
+    <ul ng-repeat="child in item.children" ng-if="item.isExpanded">
+        <tree-item item="child" item-selected="subItemSelected(item)" use-callback="useCallback"
+                   can-select-item="canSelectItem" multi-select="multiSelect"
+                   on-active-item="activeSubItem(item, $event)"></tree-item>
+    </ul>
+</li>

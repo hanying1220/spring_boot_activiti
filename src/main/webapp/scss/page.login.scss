@@ -1,0 +1,137 @@
+.loginBox{
+    background:url("/content/images/login_bg.png") center center no-repeat;
+    background-attachment: fixed;
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    .viewclient{
+        position:relative;
+        top:50%;
+        margin-top:-307px;
+    }
+    .logoBox{
+        text-align: center;
+        img{
+            height:150px;
+        }
+        p{
+            font-size: 20px;
+            color:#fff;
+            line-height:52px;
+            margin:10px 0;
+            letter-spacing: .2em;
+        }
+    }
+    .content{
+        width:350px;
+        margin:0 auto;
+    }
+    .form-group{
+        margin-bottom:20px;
+        &:nth-last-child(2){margin-bottom:0;}
+        &:nth-last-child(1){
+            label{
+                float:left;
+                &:nth-last-of-type(1){float:right;}
+                span{
+                    color:#fff;
+                    font-size:14px;
+                }
+            }
+        }
+        .form-control{
+            border:none;
+        }
+        .yzm{
+            width:220px;
+            float:left;
+        }
+        .yzmImg{
+            float:right;
+            width:114px;
+            height:34px;
+            background-color:#fff;
+        }
+    }
+}
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+input:-webkit-autofill:focus{
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.login-info{
+    width:350px;
+    height:30px;
+    margin:0 auto;
+    border:1px solid #57b6f6;
+    background-color:#3f5c71;
+    box-shadow: none;
+    color:#fff;
+    font-size:14px;
+    line-height: 28px;
+    letter-spacing: 3px;
+    text-align:left;
+    padding:0 10px;
+    border-radius:0;
+    margin-bottom:8px;
+    strong{
+        margin-right:2px;
+        font-size:20px;
+        display:inline-block;
+        vertical-align:middle;
+        padding-top:5px;
+        //color:#ef5757;
+    }
+}
+.registerBox{
+    background-image:url("/content/images/register_bg.jpg");
+    .viewclient{
+        margin-top:-250px;
+        .registerBtn{
+            margin-left:25%!important;
+            margin-top:15px!important;
+        }
+    }
+    h1{
+        font-size:36px;
+        color:#fff;
+        text-align:center;
+        margin-bottom:30px;
+    }
+    .has-error .help-block{
+        text-align:right;
+    }
+    .content{
+        width:450px;
+    }
+    label.col-sm-3{
+        padding-right:10px!important;
+        text-align:right!important;
+        color:#fff;
+        font-size:16px;
+    }
+    .row{
+        margin-right:0;
+    }
+    #strength{
+        margin-top:15px;
+        #strengthBar{
+            margin-top:10px;
+        }
+        .point{
+            width:107px;
+            height:10px;
+            float:left;
+            margin-right:5px;
+            &:nth-child(1){
+                border-radius:5px 0 0 5px;
+            }
+            &:nth-last-child(1){
+                border-radius:0 5px 5px 0;
+            }
+        }
+    }
+}

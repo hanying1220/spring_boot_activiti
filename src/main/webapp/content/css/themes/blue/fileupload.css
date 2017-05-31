@@ -1,0 +1,35 @@
+/* ---------- fileupload ---------- */
+.wi-fileupload-btndiv {
+  position: absolute;
+  overflow: hidden;
+}
+.wi-fileupload-btn {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  font-size: 999px;
+}
+.wi-fileupload > li > span {
+  margin-right: .5em;
+}
+span.wi-fileupload-completed,
+span.wi-fileupload-tip,
+span.wi-fileupload-queued {
+  color: #558193;
+}
+span.wi-fileupload-error {
+  color: #f00;
+}
+span.wi-fileupload-error {
+  color: #f00;
+}
+span.wi-fileupload-del {
+  cursor: pointer;
+  text-decoration: none;
+}
+span.wi-fileupload-del:hover {
+  text-decoration: underline;
+}

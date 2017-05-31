@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Administrator (generated)" id="1484805332832-1">
+        <dropUniqueConstraint constraintName="CONSTRAINT_A" tableName="T_ERM_USER"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1484805332832-2">
+        <dropColumn columnName="FIRST_NAME" tableName="T_ERM_USER"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1484805332832-3">
+        <dropColumn columnName="LAST_NAME" tableName="T_ERM_USER"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1484805332832-4">
+        <dropDefaultValue columnDataType="timestamp" columnName="created_date" tableName="t_erm_user"/>
+    </changeSet>
+</databaseChangeLog>

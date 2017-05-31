@@ -1,0 +1,21 @@
+{
+    "login": {
+        "title": "验证",
+        "form": {
+            "password": "密码",
+            "password.placeholder": "密码",
+            "rememberme": "记住用户名",
+            "notlogin":"一周内免登录",
+            "button": "登录",
+            "yzm.placeholder": "验证码"
+        },
+        "messages": {
+            "error": {
+                "authentication": "<strong>*</strong> 请输入正确的用户名或密码"
+            }
+        },
+        "password" : {
+            "forgot": "忘记密码?"
+        }
+    }
+}

@@ -1,0 +1,46 @@
+<form class="form-horizontal w5c-form demo-form" role="form"  id="fromMenuGroup" name="validateForm"
+      w5c-form-validate="vm.validateOptions">
+    <div class="modal-body  m-b-lg" >
+        <div class="form-horizontal">
+            <div class="form-group m-b-md row">
+                <div class="col-sm-6">
+                    <label class="col-sm-3 control-label">菜单编号
+                        <a class="text-muted">*</a>
+                    </label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="code" name="code" ng-model="menu.code"  autocomplete="off" placeholder="" type="text"  required="" >
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label class="col-sm-3 control-label">菜单路径
+                        <a class="text-muted">*</a>
+                    </label>
+                    <div class="col-sm-7" >
+                        <input class="form-control" id="path" name="path" ng-model="menu.path" autocomplete="off" placeholder="" type="text"   required="">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label class="col-sm-3 control-label">菜单名称
+                        <a class="text-muted">*</a>
+                    </label>
+                    <div class="col-sm-7" >
+                        <input class="form-control" id="name" name="name" ng-model="menu.name"  autocomplete="off" placeholder="" type="text"  required="" >
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label class="col-sm-3 control-label">菜单图标</label>
+                    <div class="col-sm-7" >
+                        <input class="form-control"  id="text" ng-model="menu.icon"  autocomplete="off" placeholder="" type="text"  >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <ui-button class="btn btn-sm btn-success" ng-disabled="isSaving" icoclass="" label="保存" w5c-form-submit="save()"></ui-button>
+        <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消" ng-click = "clear()"></ui-button>
+    </div>
+</form>

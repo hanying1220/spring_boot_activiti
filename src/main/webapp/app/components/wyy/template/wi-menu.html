@@ -1,0 +1,24 @@
+<div class="wi-menu" ng-class="{'wi-menu-open': isOpen, 'wi-menu-root': menutype != 'sub'}">
+    <div class="wi-menu-toolbar wi-clearf" ng-style="{display: conf.filterable || groupsBackward.length || groupsForward.length ? 'block':'none'}">
+        <span class="wi-menu-backward" ng-class="{'wi-menu-page': groupsBackward.length}" ng-click="backwardClick($event)">
+            <span class="icon-arrow-left"></span></span>
+        <input type="text" class="wi-menu-filter" ng-style="{display: conf.filterable ? 'inline-block' : 'none'}" ng-model="filterval" onclick="event.stopPropagation()" placeholder="检索关键字" />
+        <span class="wi-menu-forward" ng-class="{'wi-menu-page': groupsForward.length}" ng-click="forwardClick($event)">
+            <span class="icon-arrow-right"></span></span>
+    </div>
+    <ul ng-repeat="data in datagroups">
+        <li ng-repeat="item in data"
+            ng-class="{'wi-menu-children': item.children, 'wi-menu-disabled': item.enabled == false, 'wi-menu-highlight': item.highlight, 'wi-menu-item-open': item.childopen}"
+            ng-mouseenter="mouseenter(item)" ng-mouseleave="mouseleave(item)" ng-click="clickLi($event, item)">
+            <img ng-if="item.icon" class="wi-menu-icon" ng-src="{{item.icon}}" />
+            <span class="wi-menu-content">{{item.label}}</span>
+            <wi-menu ng-if="item.children"
+                     adaptable="true"
+                     position="right-top"
+                     filterable="{{item.filterable}}"
+                     dataprovider="item.children"
+                     is-open="{{item.childopen}}">
+            </wi-menu>
+        </li>
+    </ul>
+</div>

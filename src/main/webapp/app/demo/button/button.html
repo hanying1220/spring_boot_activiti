@@ -1,0 +1,94 @@
+<div class="bg-light lter b-b wrapper-md ng-scope">
+    <h1 class="m-n font-thin h3">Buttons</h1>
+</div>
+<div class="wrapper-md ng-scope">
+    <div class="row">
+        <div class="col-md-12">
+            <div >
+                <h4 class="m-t-xs">权限按钮控制演示(取菜单权限动作点)</h4>
+                <ui-permission permissions="permissions" >
+                    <ui-button class="btn btn-sm btn-primary" label="新增"  permission-code="add" ></ui-button>
+                    <ui-button class="btn btn-sm btn-primary"  label="编辑"  permission-code="edit"></ui-button>
+                    <ui-button class="btn btn-sm btn-primary"  label="删除"  permission-code="delete" ></ui-button>
+                    <ui-button class="btn btn-sm btn-primary"  label="提交"  permission-code="submit" ></ui-button>
+                    <ui-button class="btn btn-sm btn-primary"  label="审核"  permission-code="audit"></ui-button>
+                </ui-permission>
+            </div>
+            <div >
+                <h4 class="m-t-xs">按钮演示</h4>
+                <ui-button class="btn btn-sm btn-primary" label="新增"  ></ui-button>
+                <ui-button class="btn btn-sm btn-primary"  label="编辑" ></ui-button>
+                <ui-button class="btn btn-sm btn-primary"  label="删除" ></ui-button>
+                <ui-button class="btn btn-sm btn-primary"  label="提交" ></ui-button>
+                <ui-button class="btn btn-sm btn-primary"  label="审核"  ></ui-button>
+            </div>
+
+            <h4 class="m-t-xs">Button options</h4>
+            <div>
+                    <ui-button class="btn btn-sm btn-primary" icoclass="" label="primary"  ></ui-button>
+                    <ui-button class="btn btn-sm btn-success" icoclass="" label="success" ></ui-button>
+                    <ui-button class="btn btn-sm btn-warning" icoclass="" label="warning"></ui-button>
+                    <ui-button class="btn btn-sm btn-danger" icoclass="" label="danger"></ui-button>
+            </div>
+
+
+
+            <h4 class="m-t">Button size</h4>
+             <div>
+                 <p>注：按钮内文字较多时，宽度可自定义，高度保持30</p>
+                 <ui-button class="btn btn-sm btn-primary" icoclass="" label="small" ></ui-button>
+                 <ui-button class="btn btn-normal btn-primary" icoclass="" label="normal"></ui-button>
+                 <ui-button class="btn btn-lg btn-primary" icoclass="" label="large"></ui-button>
+                 <ui-button class="btn btn-primary" icoclass="" label="自定义宽度按钮" width="120"></ui-button>
+             </div>
+
+            <h4 class="m-t-xs">常见Button</h4>
+            <div>
+                <div style="margin-bottom:10px;">
+                    <ui-button class="btn btn-sm btn-primary" icoclass="" label="搜索"></ui-button>
+                    <ui-button class="btn btn-normal btn-primary btn-addon" icoclass="iconfont icon-bianji" label="编辑"></ui-button>
+                    <ui-button class="btn btn-lg btn-primary btn-addon" icoclass="iconfont icon-xinzeng" label="新增角色"></ui-button>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <ui-button class="btn btn-sm btn-success" icoclass="" label="保存"></ui-button>
+                    <ui-button class="btn btn-normal btn-success btn-addon" icoclass="iconfont icon-baocun" label="保存"></ui-button>
+                    <ui-button class="btn btn-lg btn-success btn-addon" icoclass="iconfont icon-gougou" label="确认确认"></ui-button>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消"></ui-button>
+                    <ui-button class="btn btn-normal btn-warning btn-addon" icoclass="iconfont icon-quxiao" label="取消"></ui-button>
+                    <ui-button class="btn btn-lg btn-warning btn-addon" icoclass="iconfont icon-shanchu" label="审核不通过"></ui-button>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <ui-button class="btn btn-sm btn-danger" icoclass="" label="删除"></ui-button>
+                    <ui-button class="btn btn-normal btn-danger btn-addon" icoclass="iconfont icon-del" label="删除"></ui-button>
+                    <ui-button class="btn btn-lg btn-danger btn-addon" icoclass="iconfont icon-zuofei" label="作废作废"></ui-button>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="btn-group dropdown" dropdown>
+            <button class="btn btn-lg btn-primary btn-addon iconfont icon-xinzeng" dropdown-toggle>Action <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href>Action</a></li>
+                <li><a href>Another action</a></li>
+                <li><a href>Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href>Separated link</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group dropdown" dropdown >
+            <ui-button class="btn btn-lg btn-primary btn-addon" icoclass="iconfont icon-xinzeng" label="新增角色" dropdown-toggle>
+              </ui-button>
+            <ul class="dropdown-menu"  >
+                <li><span class="btn btn-lg btn-primary btn-addon" >菜单组</span></li>
+                <li><span class="btn btn-lg btn-primary btn-addon">菜单项</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

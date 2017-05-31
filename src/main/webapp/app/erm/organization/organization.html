@@ -1,0 +1,46 @@
+<ui-permission permissions="permissions" >
+        <div jhi-layout col="2">
+            <ui-panel>
+                <ui-panel-heading>
+                    组织机构
+                    <div class="toolbtn">
+                        <!--<i class="iconfont icon-xinzeng" ng-click="initTree()" title="刷新"></i>-->
+                        <i class="iconfont icon-xinzeng" ng-click="showOrgz('add')" permission-code="add" title="新增"></i>
+                        <i class="iconfont icon-bianji" ng-click="showOrgz('update')" permission-code="edit" title="编辑"></i>
+                        <i class="iconfont icon-jianquminus25" ng-click="deleteOrgz()" permission-code="delete" title="删除"></i>
+                    </div>
+                </ui-panel-heading>
+                <ui-tree
+                    dataProvider="treeData"
+                    onitemclick="onitemclick"
+                    pidfield="parentId"
+                    labelfield="name"
+                    wid="orgzTree"
+                    ></ui-tree>
+            </ui-panel>
+        </div>
+
+        <div jhi-layout col="10">
+                <ui-panel heading="用户列表">
+                    <div class="list-item clearfix m-b">
+                        <ui-button class="btn btn-lg btn-primary btn-addon" ng-click="showUser()" icoclass="iconfont icon-xinzeng" label="添加用户"></ui-button>
+                        <form class="form-inline pull-right" role="form">
+                            <div class="form-group">
+                                <label class="sr-only"></label>
+                                <input type="text" class="form-control" ng-model="search.searchName" placeholder="搜索用户名称"/>
+                            </div>
+                            <button class="btn btn-sm btn-primary" ng-click="searchUser()">搜索</button>
+                        </form>
+                    </div>
+                    <div
+                        ui-grid="gridOptions"
+                        ui-grid-pagination
+                        class="grid m-around"
+                        style="height:calc(100% - 45px);">
+                    </div>
+                </ui-panel>
+        </div>
+</ui-permission>
+
+
+

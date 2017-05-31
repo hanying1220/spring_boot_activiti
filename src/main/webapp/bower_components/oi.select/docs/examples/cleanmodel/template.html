@@ -1,0 +1,28 @@
+<div ng-controller="selectCleanmodelController">
+    <h2>Clean model</h2>
+    <p>Clean model by click</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                    oi-options="item.name for item in shopArr"
+                    ng-model="bundle"
+                    oi-select-options="{
+                        cleanModel: true
+                    }"
+                    placeholder="Select"
+                    ></oi-select>
+        </div>
+    </div>
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in shopArr"
+ng-model="bundle"
+oi-select-options="{
+    cleanModel: true
+}"
+</div>
+<div class="col-md-4"><pre>
+{{bundle}}
+</pre></div>
+</div>
+</div>

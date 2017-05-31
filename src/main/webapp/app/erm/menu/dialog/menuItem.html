@@ -1,0 +1,96 @@
+<form class="form-horizontal w5c-form demo-form" role="form" id="fromMenuItem"   name="validateForm"
+      w5c-form-validate="vm.validateOptions">
+    <div class="modal-body" >
+        <fieldset>
+            <legend>基础信息</legend>
+            <div class="form-group  m-b-md row">
+                <div class="col-sm-12">
+                    <label  class="control-label col-sm-2" >
+                        <span >上级菜单</span>
+                        <span style="color:red; " >*</span>
+                    </label>
+                    <div class="col-sm-10">
+                        <select class="form-control"  id="parent" ng-model="parentId"    name="parent"
+                                ng-options="item.id as item.name for item in MenuOptions " required=""  >
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-b-md row">
+                <div class="col-sm-6">
+                    <label class="control-label col-sm-4" for="code" >
+                        <span >菜单编号</span>
+                        <span style="color:red; " >*</span>
+                    </label>
+                    <div class="col-sm-7">
+                        <input class="form-control"  id="code"  name="code" ng-model="menu.code"   type="text"  required="" >
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label col-sm-4 col-sm-offset-1"  for="path">
+                        <span >菜单路径</span>
+                        <span style="color:red; " >*</span>
+                    </label>
+                    <div class="col-sm-7" >
+                        <input class="form-control" id="path" name="path" ng-model="menu.path"  type="text" required="" >
+                    </div>
+                </div>
+            </div>
+            <div class="form-group m-b-md row">
+                <div class="col-sm-6">
+                    <label class="control-label col-sm-4" >
+                        <span >菜单名称</span>
+                        <span style="color:red; " >*</span>
+                    </label>
+                    <div class="col-sm-7" >
+                        <input class="form-control"  id="name" name="name" ng-model="menu.name"   type="text"  required="" >
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label class="control-label col-sm-4 col-sm-offset-1" >
+                        <span >菜单图标</span>
+                    </label>
+                    <div class="col-sm-7" >
+                        <input class="form-control"  id="text" ng-model="menu.icon"   type="text"  >
+                    </div>
+                </div>
+            </div>
+            <div class="form-group  m-b-md row"  ng-show="isSysAdmin">
+                <div class="col-sm-12 ">
+                    <label  class="control-label col-sm-2" >
+                        <span >菜单可见</span>
+                    </label>
+                    <div class="checkbox-inline col-sm-2"  ng-repeat="item in authoritiesOptions">
+                        <label>
+                            <input  type="checkbox" value="{{item.value}}"
+                                    ng-checked="{{item.checked}}"
+                                    ng-click="onAuthoritieSelect($event,item)" >
+                            {{item.text}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>功能动作</legend>
+            <div class="form-group m-b-md m-l">
+                <div class="form-group row" style="margin-left:20px;">
+                    <div class="checkbox-inline col-sm-1" ng-repeat="action in MenuActions">
+                        <label>
+                            <input  type="checkbox" value="{{action.value}}"
+                                    ng-checked="{{action.checked}}"
+                                    ng-click="onCheckSelect($event,action)" >
+                            {{action.text}}
+                        </label>
+                    </div>
+                </div>
+                <ui-button class="btn btn-sm btn-primary" ng-click="addAction()" label="新增"/>
+            </div>
+            <div ui-grid="gridAction"  ui-grid-edit  class="grid form-horizontal"  style="width:100%; height: 250px;"/>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <ui-button class="btn btn-sm btn-success" ng-disabled="isSaving" icoclass=""  label="保存" w5c-form-submit="save()"></ui-button>
+        <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消" ng-click = "clear()"></ui-button>
+    </div>
+</form>

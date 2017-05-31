@@ -1,0 +1,90 @@
+<!-- navbar header -->
+<!--<div class="navbar-header {{app.settings.navbarHeaderColor}}">
+    <a href="#/" class="navbar-brand text-lt">
+        <i class="logo"></i>
+        <span class="navbar-version hidden-folded">{{app.name}}</span>
+    </a>
+</div>-->
+
+<!-- navbar collapse -->
+<div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only"  uib-collapse="vm.isNavbarCollapsed" role="navigation" >
+
+    <div class="nav navbar-nav navigationBox">
+        <a class="collapse-icon pull-left" ng-click="app.settings.asideFolded = !app.settings.asideFolded">
+            <i class="fa {{app.settings.asideFolded ? 'fa-indent' : 'fa-dedent'}} fa-fw"></i>
+        </a>
+        <p class="pull-left m-l">首页><b>{{currentName}}</b></p>
+    </div>
+
+    <!-- nabar right -->
+    <ul class="nav navbar-nav navbar-right">
+        <li class="active"  uib-dropdown class="dropdown pointer">
+            <a href="javascript:;" class="dropdown-toggle" uib-dropdown-toggle id="">
+                <i class="icon-bell fa-fw"></i>
+                <span>New</span> <span class="caret"></span>
+                <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight w"  uib-dropdown-menu>
+                <li><a href="#">Projects</a></li>
+                <li>
+                    <a href>
+                        <span class="badge bg-info pull-right">5</span>
+                        <span>Task</span>
+                    </a>
+                </li>
+                <li><a href>User</a></li>
+                <li>
+                    <a href>
+                        <span class="badge bg-danger pull-right">4</span>
+                        <span>Email</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li ng-class="{active: vm.$state.includes('account')}"  uib-dropdown class="dropdown pointer">
+            <a class="dropdown-toggle clear" uib-dropdown-toggle href="javascript:;" id="account-menu">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="/content/images/logo-jhipster.png" alt="..." style="width: 79%;">
+                <i class="on md b-white bottom"></i>
+              </span>
+                <span class="hidden-sm hidden-md">{{vm.account.login}}</span> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight w"  uib-dropdown-menu>
+                <li ui-sref-active="active">
+                    <a  ng-click="vm.collapseNavbar(1)">
+                        <span class="glyphicon glyphicon-wrench"></span>&nbsp;
+                        <span data-translate="global.menu.account.settings">Settings</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ng-click="vm.collapseNavbar(2)">
+                        <span class="glyphicon glyphicon-lock"></span>&nbsp;
+                        <span data-translate="global.menu.account.password">Password</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a href="" ng-click="vm.logout()" id="logout">
+                        <span class="glyphicon glyphicon-log-out"></span>&nbsp;
+                        <span data-translate="global.menu.account.logout">Sign out</span>
+                    </a>
+                </li>
+             <!--   <li ui-sref-active="active" ng-switch-when="false">
+                    <a href="" ng-click="vm.login()" id="login">
+                        <span class="glyphicon glyphicon-log-in"></span>&nbsp;
+                        <span data-translate="global.menu.account.login">Sign in</span>
+                    </a>
+                </li>-->
+               <!-- <li ui-sref-active="active" ng-switch-when="false">
+                    <a ui-sref="register" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;
+                        <span data-translate="global.menu.account.register">Register</span>
+                    </a>
+                </li>-->
+            </ul>
+            <!-- / dropdown -->
+        </li>
+    </ul>
+    <!-- / navbar right -->
+</div>
+<!-- / navbar collapse -->
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="pc (generated)" id="1477882203974-1">
+        <dropForeignKeyConstraint baseTableName="DEPARTMENT" constraintName="FK_DEPARTMENT_DEPARTMENT_ID"/>
+    </changeSet>
+    <changeSet author="pc (generated)" id="1477882203974-2">
+        <dropTable tableName="DEPARTMENT"/>
+    </changeSet>
+    <changeSet author="pc (generated)" id="1477882203974-3">
+        <dropTable tableName="GUEST"/>
+    </changeSet>
+    <changeSet author="pc (generated)" id="1477882203974-4">
+        <dropColumn columnName="TENANCY_DODE" tableName="JHI_USER"/>
+    </changeSet>
+    <changeSet author="pc (generated)" id="1477882203974-5">
+        <dropDefaultValue columnDataType="timestamp" columnName="created_date" tableName="jhi_user"/>
+    </changeSet>
+</databaseChangeLog>

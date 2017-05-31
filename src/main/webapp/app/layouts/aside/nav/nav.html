@@ -1,0 +1,116 @@
+<!-- list -->
+<ul class="nav" ng-controller="NavController">
+    <li ui-sref-active="active">
+        <a ui-sref="home">
+            <i class="glyphicon glyphicon-home"></i>
+            <span class="font-bold">首页</span>
+        </a>
+    </li>
+    <!--<li class="line dk"></li>-->
+
+
+    <li ui-sref-active="active" ng-repeat="menu in menus">
+        <a href="javascript:;" class="auto">
+              <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+              </span>
+            <i class="{{menu.icon}}"></i>
+            <span class="font-bold">{{menu.name}}</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li ui-sref-active="active"   ng-repeat="item in menu.menus" >
+                <a ui-sref="{{item.path}}">
+                    <i class="{{item.icon}}"></i>
+                    <span >{{item.name}}</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <!--<li class="line dk"></li>-->
+
+    <li ui-sref-active="active">
+        <a href="javascript:;" class="auto">
+              <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+              </span>
+            <i class="glyphicon glyphicon-th-large icon text-success"></i>
+            <span class="font-bold">Demo管理</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li ui-sref-active="active">
+                <a ui-sref="my-workflow">
+                    <span>代办任务</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="layout-test">
+                    <span>布局面板</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="tabs-test">
+                    <span>Tab面板</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="modal-test">
+                    <span>弹出框</span>
+                </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="uigrid">
+                    <span data-translate="global.menu.demo.uigrid">uigrid</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="tree">
+                    <span>树</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="form">
+                    <span data-translate="global.menu.demo.form">form</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="button">
+                    <span data-translate="global.menu.demo.button">button</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="upload-test">
+                    <span>图片上传</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="upload-file">
+                    <span>文件上传</span>
+                </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="test">
+                    <span>form表单自动布局</span>
+                </a>
+            </li>
+
+
+        <li ui-sref-active="active">
+            <a ui-sref="umeditor">
+                <span>富文本编辑器</span>
+            </a>
+        </li>
+        <li ui-sref-active="active">
+            <a ui-sref="form-test">
+                <span>form-test</span>
+            </a>
+        </li>
+    </ul>
+    </li>
+
+</ul>
+<!-- / list -->

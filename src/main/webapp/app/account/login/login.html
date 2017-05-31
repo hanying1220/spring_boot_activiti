@@ -1,0 +1,50 @@
+<div class="loginBox">
+    <div class="row viewclient">
+        <div class="logoBox col-md-4 col-md-offset-4">
+            <img src="/content/images/logo_large.png" alt=""/>
+            <p>资源管理系统</p>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <div class="alert alert-danger login-info" ng-show="vm.authenticationError" data-translate="login.messages.error.authentication">
+                <strong>*</strong> Please check your credentials and try again.
+            </div>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <div class="content">
+                <form class="form" role="form" ng-submit="vm.login($event)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="username" placeholder="{{'global.form.username.placeholder' | translate}}" ng-model="vm.username" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="{{'login.form.password.placeholder' | translate}}"
+                               ng-model="vm.password">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="tenancyCode" placeholder="{{'global.form.tenancyCode.placeholder' | translate}}"
+                               ng-model="vm.tenancyCode">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary loginBtn" ng-click="vm.login()" id="loginBtn">登录</button>
+                    <a class="loginBtn registerBtn" href="" ng-click="vm.register()">注册</a>
+
+
+                    <div class="form-group">
+                        <label for="rememberMe">
+                            <input type="checkbox" id="rememberMe" ng-model="vm.rememberMe" checked>
+                            <span data-translate="login.form.rememberme">Remember me</span>
+                        </label>
+                        <label for="notlogin">
+                            <input type="checkbox" id="notlogin" checked>
+                            <span data-translate="login.form.notlogin">not login</span>
+                        </label>
+                    </div>
+                </form>
+                <p></p>
+              <!--  <div class="alert alert-warning">
+                    <a class="alert-link" href="" ng-click="vm.requestResetPassword()" data-translate="login.password.forgot">Did you forget your password?</a>
+                </div>-->
+
+            </div>
+        </div>
+    </div>
+</div>

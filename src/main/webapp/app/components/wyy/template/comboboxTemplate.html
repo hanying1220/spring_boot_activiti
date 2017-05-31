@@ -1,0 +1,18 @@
+<div class="wi-popup wi-combobox"
+     ng-keydown="vm.keydownHandler($event)"
+     ng-click="vm.clickHandler($event)"
+     is-open="vm.isopen" ng-disabled="vm.enable" >
+    <div class="wi-popup-menu wi-combobox-menu"  >
+        <ul>
+            <li ng-repeat="data in vm.dataprovider"
+                ng-class="{'wi-combobox-selected':($index===vm.selectedindex&&!data['isGroup']) || data['_checked'],'wi-combobox-option':!data['isGroup']}"
+                ng-click="vm.itemClickHandler(data,$event)"
+                ng-style="{'padding-left': (groupfield&&!data['isGroup']?15 : 5)+'px','font-weight':data['isGroup']?'bold':'normal'}">
+                <input  ng-if="multiselect" class="form-control wi-checkbox" type="checkbox" ng-click="checkAll()" ng-checked="data['_checked']" />
+                {{data[vm.labelfield]}}
+            </li>
+        </ul>
+    </div>
+    <input class="form-control" type="text" ng-model="vm._text" ng-change="vm.inputChange()" ng-disabled="vm.enable" />
+    <span class="icon-chevron-down"></span>
+</div>

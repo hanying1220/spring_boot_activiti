@@ -1,0 +1,32 @@
+<div class="tree-control">
+
+    <div class="tree-input" ng-click="onControlClicked($event)">
+    <span ng-if="selectedItems.length == 0" class="selected-items">
+      <span ng-bind="defaultLabel"></span>
+    </span>
+    <span ng-if="selectedItems.length > 0" class="selected-items">
+      <span ng-repeat="selectedItem in selectedItems" class="selected-item">{{selectedItem.name}} <span class="selected-item-close"
+                                                                                  ng-click="deselectItem(selectedItem, $event)"></span></span>
+        <span class="caret"></span>
+    </span>
+        <!-- <input type="text" class="blend-in" /> -->
+    </div>
+    <div class="tree-view" ng-show="showTree">
+        <div class="helper-container">
+             <div class="line" data-ng-if="switchView">
+                 <button type="button" ng-click="switchCurrentView($event);" class="helper-button">{{switchViewLabel}}</button>
+             </div>
+            <div class="line">
+                <input placeholder="Search..." type="text" ng-model="filterKeyword" ng-click="onFilterClicked($event)"
+                       class="input-filter">
+                <span class="clear-button" ng-click="clearFilter($event)"><span class="item-close"></span></span>
+            </div>
+        </div>
+        <ul class="tree-container">
+            <tree-item class="top-level" ng-repeat="item in inputModel" item="item" ng-show="!item.isFiltered"
+                       use-callback="useCallback" can-select-item="canSelectItem"
+                       multi-select="multiSelect" item-selected="itemSelected(item)"
+                       on-active-item="onActiveItem(item)" select-only-leafs="selectOnlyLeafs"></tree-item>
+        </ul>
+    </div>
+</div>

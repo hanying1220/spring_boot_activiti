@@ -1,0 +1,33 @@
+<div ng-controller="selectAllController">
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                oi-options="item.name group by item.category for item in shopArrFn($query) | orderBy: 'name' track by item.id"
+                ng-model="bundle"
+                placeholder="Select"
+                oi-select-options="{
+                    newItem: 'prompt',
+                    newItemModel: {id: null, name: $query, category: 'shoes'},
+                    editItem: 'correct',
+                    saveTrigger: 'enter blur tab space'
+                }"
+                ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name group by item.category for item in shopArrFn($query) | orderBy: 'name' track by item.id"
+ng-model="bundle"
+oi-select-options="{
+    newItem: 'prompt',
+    newItemModel: {id: null, name: $query, category: 'shoes'},
+    editItem: 'correct',
+    saveTrigger: 'enter blur tab space'
+}"
+</div>
+<div class="col-md-4"><pre>
+{{bundle}}
+</pre></div>
+</div>
+</div>

@@ -1,0 +1,86 @@
+<div ng-controller="selectMultipleController">
+    <h2>Multiple</h2>
+    <p>Specifies that multiple options can be selected at once</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                oi-options="key as value for (key, value) in shopObjShort"
+                ng-model="bundle"
+                multiple
+                placeholder="Select"
+                ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="key as value for (key, value) in shopObj"
+ng-model="bundle"
+multiple
+</div>
+<div class="col-md-4"><pre>
+{{bundle}}
+</pre></div>
+</div>
+
+    <br/>
+
+    <p>Use <code>closeList</code> if you need stay dropdown list open after choosing or removing item</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                    oi-options="item.name for item in shopArr track by item.id"
+                    ng-model="bundle2"
+                    multiple
+                    oi-select-options="{
+                        closeList: false
+                    }"
+                    placeholder="Select"
+                    ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in shopArr track by item.id"
+ng-model="bundle2"
+multiple
+oi-select-options="{
+    closeList: false
+}"
+</div>
+<div class="col-md-4"><pre>
+{{bundle2}}
+</pre></div>
+</div>
+
+    <br/>
+
+    <p>Use <code>multiple-placeholder</code> if you need to set placeholder if model not empty</p>
+    <p>Use <code>list-placeholder</code> if you need to set label for empty list</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                    oi-options="item.name for item in shopArr track by item.id"
+                    ng-model="bundle3"
+                    multiple
+                    multiple-placeholder="add"
+                    list-placeholder="not found"
+                    placeholder="Select"
+                    ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in shopArr track by item.id"
+ng-model="bundle3"
+multiple
+multiple-placeholder="add"
+list-placeholder="not found"
+</div>
+<div class="col-md-4"><pre>
+{{bundle3}}
+</pre></div>
+</div>
+</div>

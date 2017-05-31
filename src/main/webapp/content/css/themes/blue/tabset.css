@@ -1,0 +1,251 @@
+.wi-tabset {
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37ffffff', endColorstr='#00ffffff', GradientType=0);
+  background-color: #daecf4;
+  border: solid 1px #94c0d2;
+  padding: 5px;
+  position: relative;
+}
+.wi-tabcont {
+  border: solid 1px #7ec6e3;
+  background: #ffffff;
+}
+.wi-tabpane {
+  overflow: auto;
+}
+.wi-tabctrl-hor,
+.wi-tabctrl-ver {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  color: #558193;
+}
+.wi-tabctrl-hor:hover,
+.wi-tabctrl-ver:hover {
+  color: #003f59;
+}
+li.wi-tab {
+  overflow: hidden;
+  cursor: default;
+  position: relative;
+  /* 关闭按钮定位参照 */
+  text-align: center;
+  background-clip: padding-box;
+}
+li.wi-tab-disabled {
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* ---------- 横向 ---------- */
+.wi-tabset-h > .wi-tabhead {
+  position: relative;
+  border-bottom: solid 1px #7ec6e3;
+}
+.wi-tabctrl-hor {
+  height: 100%;
+  width: 27px;
+}
+.wi-tabctrl-hor.icon-chevron-left {
+  top: 0;
+  left: 0;
+}
+.wi-tabctrl-hor.icon-chevron-right {
+  top: 0;
+  right: 0;
+}
+:not(.wi-tabset-h) > .wi-tabhead > .wi-tabctrl-hor {
+  display: none;
+  /* 非横向不显示 ctrl-hor */
+}
+.wi-tabset-h > .wi-tabhead > .wi-tabstage {
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  /* 遮挡下边框 */
+  overflow: hidden;
+  left: 27px;
+  right: 27px;
+  /* 显示翻页时，留白 */
+}
+.wi-tabset-h > .wi-tabhead > .wi-tabstage:first-child {
+  /* 不翻页时显示 */
+  left: 0;
+  right: 0;
+}
+ul.wi-tabul-hor {
+  height: 100%;
+  position: absolute;
+  /* 翻页时用 left 定位 */
+}
+.wi-tabul-hor > li.wi-tab {
+  border: solid 1px #94c0d2;
+  color: #003f59;
+  background-color: #daecf4;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37ffffff', endColorstr='#00ffffff', GradientType=0);
+  float: left;
+  padding: 0 .5em;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+  border-bottom-color: transparent;
+}
+.wi-tabul-hor > li.wi-tab:not(:first-child) {
+  margin-left: 2px;
+}
+.wi-tabul-hor > li.wi-tab.wi-tab-hasclose {
+  padding-right: 1.8em;
+}
+.wi-tabul-hor > li.wi-tab.wi-tab-active {
+  border: solid 1px #7ec6e3;
+  background: #ffffff;
+  color: #003f59;
+  border-bottom-color: #ffffff;
+}
+.wi-tabul-hor > li.wi-tab:not(.wi-tab-disabled):not(.wi-tab-active):hover {
+  border-color: #7ec6e3;
+  color: #003f59;
+  background-color: #7bd2f6;
+}
+.wi-tabul-hor > .wi-tab > span.icon-remove {
+  position: absolute;
+  cursor: pointer;
+  vertical-align: middle;
+  right: .5em;
+}
+.wi-tabul-hor > li.wi-tab:not(.wi-tab-hasclose) > span.icon-remove {
+  display: none;
+}
+.wi-tabul-hor > .wi-tab > .wi-tabhead-cont > img.wi-tab-icon {
+  width: 1em;
+  height: 1em;
+  margin-right: .5em;
+  vertical-align: middle;
+}
+.wi-tabset-h > .wi-tabcont {
+  border-top: none;
+}
+/* ---------- 纵向 ---------- */
+.wi-tabset-v > .wi-tabhead {
+  float: left;
+  border-right: solid 1px #7ec6e3;
+}
+.wi-tabset-vh > .wi-tabhead {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  bottom: 5px;
+  border-right: solid 1px #7ec6e3;
+}
+.wi-tabctrl-ver {
+  width: 100%;
+  height: 27px;
+}
+.wi-tabctrl-ver.icon-chevron-up {
+  left: 0;
+  top: 0;
+}
+.wi-tabctrl-ver.icon-chevron-down {
+  left: 0;
+  bottom: 0;
+}
+:not(.wi-tabset-vh) > .wi-tabhead > .wi-tabctrl-ver {
+  display: none;
+  /* 非纵向指定高度不显示 ctrl-hor */
+}
+.wi-tabset-vh > .wi-tabhead > .wi-tabstage {
+  /* vertical 指定高度需对 stage 定位 */
+  position: absolute;
+  left: 0;
+  right: -1px;
+  /* 遮挡右边框 */
+  overflow: hidden;
+  top: 27px;
+  bottom: 27px;
+  /* 显示翻页时，留白 */
+}
+.wi-tabset-vh > .wi-tabhead > .wi-tabstage:first-child {
+  /* 不翻页时显示 */
+  top: 0;
+  bottom: 0;
+}
+ul.wi-tabul-ver {
+  height: 200%;
+  /*使后方li不至于换行*/
+  word-wrap: break-word;
+  /* 强制换行 */
+}
+.wi-tabset-v > .wi-tabhead > .wi-tabstage > ul.wi-tabul-ver {
+  width: calc(100% + 1px);
+  /* 遮挡右边框 */
+}
+.wi-tabset-vh > .wi-tabhead > .wi-tabstage > ul.wi-tabul-ver {
+  width: 100%;
+  position: absolute;
+  /* 翻页时用 top 定位 */
+}
+.wi-tabul-ver > li.wi-tab {
+  border: solid 1px #94c0d2;
+  color: #003f59;
+  background-color: #daecf4;
+  background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37ffffff', endColorstr='#00ffffff', GradientType=0);
+  width: 100%;
+  border-radius: 5px 0 0 5px;
+  border-right-color: transparent;
+  padding: .3em 0;
+}
+.wi-tabul-ver > li.wi-tab.wi-tab-hasclose {
+  padding-bottom: 1.8em;
+}
+.wi-tabul-ver > li.wi-tab:not(:last-child) {
+  margin-bottom: 2px;
+}
+.wi-tabul-ver > li.wi-tab.wi-tab-active {
+  border: solid 1px #7ec6e3;
+  background: #ffffff;
+  color: #003f59;
+  border-right-color: #ffffff;
+}
+.wi-tabul-ver > li.wi-tab:not(.wi-tab-disabled):not(.wi-tab-active):hover {
+  border-color: #7ec6e3;
+  color: #003f59;
+  background-color: #7bd2f6;
+}
+.wi-tabul-ver > .wi-tab > span.icon-remove {
+  position: absolute;
+  cursor: pointer;
+  bottom: .2em;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.wi-tabul-ver > li.wi-tab:not(.wi-tab-hasclose) > span.icon-remove {
+  display: none;
+}
+.wi-tabul-ver > .wi-tab > .wi-tabhead-cont {
+  width: 1.5em;
+  text-align: center;
+  margin: 0 auto;
+}
+.wi-tabul-ver > .wi-tab > .wi-tabhead-cont > img.wi-tab-icon {
+  width: 1em;
+  height: 1em;
+}
+.wi-tabset-v > .wi-tabcont {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  border-left: none;
+}
+.wi-tabset-vh > .wi-tabcont {
+  height: 100%;
+  border-left: none;
+}

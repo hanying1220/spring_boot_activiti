@@ -1,0 +1,175 @@
+/* ---------- dividedbox ---------- */
+.wi-dividedbox {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #cccccc;
+}
+.wi-hdividedbox.wi-dividedbox-resizing {
+  cursor: col-resize;
+}
+.wi-vdividedbox.wi-dividedbox-resizing {
+  cursor: row-resize;
+}
+/* 非 resizing 时不显示followbar */
+.wi-dividedbox-followbar {
+  background-color: #bfbfbf;
+  position: absolute;
+  z-index: 1;
+}
+.wi-hdividedbox > .wi-dividedbox-followbar {
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+.wi-vdividedbox > .wi-dividedbox-followbar {
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+:not(.wi-dividedbox-resizing) > .wi-dividedbox-followbar {
+  display: none;
+}
+/* ---------- dividedbox-group ---------- */
+.wi-dividedbox-group {
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.wi-dividedbox-group:last-child {
+  /* 防止浏览器尺寸计算误差导致溢出，最后一个使用绝对定位 */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.wi-hdividedbox-group {
+  float: left;
+  height: 100%;
+}
+/* h: 最后一列无 resizebar，其他列需留白 */
+.wi-hdividedbox-group:not(:last-child) {
+  padding-right: 4px;
+}
+.wi-vdividedbox-group {
+  float: none;
+  width: 100%;
+}
+/* v: 最后一行无 resizebar，其他行需留白 */
+.wi-vdividedbox-group:not(:last-child) {
+  padding-bottom: 4px;
+}
+.wi-dividedbox-collapsing {
+  transition: all linear 0.5s;
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: all linear 0.5s;
+  -o-transition: all linear 0.5s;
+}
+.wi-dividedbox-bar {
+  background: #f5f5f5;
+  border: #cccccc 1px solid;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.wi-dividedbox-group:last-child > .wi-dividedbox-bar {
+  display: none;
+}
+/* 最后一个 box 无 resizebar */
+.wi-hdividedbox-group > .wi-dividedbox-bar {
+  width: 4px;
+  top: 0;
+  cursor: col-resize;
+  border-style: none solid;
+  /* 只有左右边框 */
+}
+.wi-vdividedbox-group > .wi-dividedbox-bar {
+  height: 4px;
+  left: 0;
+  cursor: row-resize;
+  border-style: solid none;
+  /* 只有上下边框 */
+}
+.wi-dividedbox-head {
+  background: #f5f5f5;
+  color: #575765;
+  border-bottom: #cccccc 1px solid;
+  height: 25px;
+  position: relative;
+  width: 100%;
+}
+.wi-dividedbox-group:not(.wi-dividedbox-showhead) > .wi-dividedbox-head {
+  display: none;
+}
+.wi-dividedbox-colled {
+  height: 100%;
+  border-bottom: none;
+}
+span.wi-dividedbox-title {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: calc(100% - 30px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+img.wi-dividedbox-icon {
+  line-height: inherit;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+}
+.wi-hdividedbox-group > .wi-dividedbox-colled > .wi-dividedbox-icon,
+.wi-hdividedbox-group > .wi-dividedbox-colled > .wi-dividedbox-title {
+  display: none;
+}
+.wi-dividedbox-collctrl-left,
+.wi-dividedbox-collctrl-right,
+.wi-dividedbox-collctrl-up,
+.wi-dividedbox-collctrl-down {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  width: 15px;
+  height: 15px;
+  background-image: url("images/dividedbox/collctrl.gif");
+}
+.wi-dividedbox-colled > .wi-dividedbox-collctrl-right,
+.wi-dividedbox-collctrl-left {
+  background-position: 0 0;
+}
+.wi-dividedbox-colled > .wi-dividedbox-collctrl-left,
+.wi-dividedbox-collctrl-right {
+  background-position: 0 -15px;
+}
+.wi-dividedbox-colled > .wi-dividedbox-collctrl-down,
+.wi-dividedbox-collctrl-up {
+  background-position: -15px -15px;
+}
+.wi-dividedbox-colled > .wi-dividedbox-collctrl-up,
+.wi-dividedbox-collctrl-down {
+  background-position: -15px 0;
+}
+.wi-dividedbox-collctrl-left:hover,
+.wi-dividedbox-collctrl-right:hover,
+.wi-dividedbox-collctrl-up:hover,
+.wi-dividedbox-collctrl-down:hover {
+  background-color: #e5e5e5;
+}
+.wi-dividedbox-cont {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+/* 可以折叠的内容框留白：collapse 高度 */
+.wi-dividedbox-showhead > .wi-dividedbox-cont {
+  height: calc(100% - 25px);
+}
+:not(.wi-dividedbox-resizable) > .wi-dividedbox-group > .wi-dividedbox-bar {
+  cursor: auto;
+}

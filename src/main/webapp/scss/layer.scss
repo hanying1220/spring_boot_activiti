@@ -1,0 +1,77 @@
+.layui-layer-content{
+    padding:30px 20px;
+    .modal-body,.modal-footer{
+        padding:0;
+        overflow: hidden;
+    }
+    .form-group{
+        margin:0 0 15px 0;
+        .control-label{
+            text-align:left;
+            color:#666;
+        }
+    }
+}
+.layui-layer{
+    border:1px solid $grid-line;
+    .layui-layer-title{
+        font-size: 14px;
+        color:#666;
+        font-weight:bold;
+        height:40px;
+        line-height:40px;
+        background-color:#f6f8f7;
+        border-top:1px solid $grid-line;
+        border-bottom:1px solid $grid-line;
+    }
+}
+
+.text-muted{color:#f6473b}
+.uploadImg{
+    width: 130px;
+    height: 130px;
+    background:url("/content/images/uploadImg.png") no-repeat;
+}
+
+//message
+.layui-layer-msg{
+    width:400px!important;
+    padding:0;
+    height:40px;
+    line-height:40px;
+    border-radius:$border-radius;
+    background-color:rgba(20,185,153,0.6)!important;
+    text-align:center;
+    color:#fff;
+    font-size:14px;
+    letter-spacing: 0.2em;
+    border:none!important;
+    border-color:transparent!important;
+    .layui-layer-content{
+        padding:0!important;
+        height:40px;
+        line-height:40px!important;
+        overflow:hidden!important;
+        text-align:center!important;
+        .layui-layer-ico{
+            top:3px!important;
+        }
+    }
+}
+
+//comfrim
+.layui-layer-btn .layui-layer-btn0{
+    border-color: $btn-success;
+    background-color: $btn-success;
+    color: #fff;
+}
+.layui-layer .layui-layer-btn .layui-layer-btn0{
+    border-color: $btn-success;
+    background-color: $btn-success;
+    color: #fff;
+}
+.layui-layer .layui-layer-btn .layui-layer-btn1{
+    border-color: $btn-warning;
+    background-color: $btn-warning;
+    color: #fff;
+}

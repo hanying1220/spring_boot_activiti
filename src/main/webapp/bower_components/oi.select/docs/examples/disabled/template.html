@@ -1,0 +1,27 @@
+<div ng-controller="selectDisabledController">
+    <h2>Disabled <button class="btn btn-default" ng-init="disabled = true" ng-click="disabled = !disabled">{{disabled ? 'on' : 'off'}}</button></h2>
+    <p>Specifies that a drop-down list should be disabled</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                oi-options="item for item in shopArrShort"
+                ng-model="bundle"
+                ng-disabled="disabled"
+                multiple
+                placeholder="Select"
+                ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item for item in shopArrShort"
+ng-model="bundle"
+ng-disabled="disabled"
+multiple
+</div>
+<div class="col-md-4"><pre>
+{{bundle}}
+</pre></div>
+</div>
+</div>

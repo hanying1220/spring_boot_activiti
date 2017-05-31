@@ -1,0 +1,289 @@
+/*--------------color.scss-------------------------*/
+.bg-gd{
+    @include vertical(rgba(40,50,60,0), rgba(40,50,60,0.075), 0, 100%);
+    filter:none;
+}
+
+.bg-gd-dk{
+    @include vertical(rgba(40,50,60,0), rgba(40,50,60,0.5), 10%, 100%);
+    filter:none;
+}
+
+.bg-light {
+    @include color-variant($brand-light, #f3f5f6, #f6f8f8, #e4eaec, #dde6e9);
+    color: $text-color;
+}
+
+.bg-dark {
+    @include color-variant($brand-dark, #474c5e, #54596a, #2e3344, #232735);
+    @include font-variant($brand-dark,#2e3344,#32374a);
+}
+
+.bg-black {
+    @include color-variant($brand-black, #263845, #314554, #131e26, #0a1015);
+    @include font-variant($brand-black,#131e26,#16232d);
+}
+.bg-black .nav > li.active > a > .iconfont{
+    color:#30a3f0;
+}
+.bg-primary {
+    @include color-variant($brand-primary, #847abf, #958dc6, #6051b5, #5244a9);
+    @include font-variant($brand-primary,#6051b5,#6658b8);
+}
+
+.bg-success {
+    @include color-variant($brand-success, #31d257, #48d46a, #20af42, #1a9c39);
+    @include font-variant($brand-success,#20af42,#22b846);
+}
+
+.bg-info {
+    @include color-variant($brand-info, #3dbde5,  #55c3e6, #16aad8, #1199c4);
+    @include font-variant($brand-info,#16aad8,#17b2e2);
+}
+
+.bg-warning {
+    @include color-variant($brand-warning, #f8da4e, #f7de69, #fcd417, #face00);
+    @include font-variant($brand-warning,#fcd417,#fcd621);
+}
+
+.bg-danger {
+    @include color-variant($brand-danger,  #f06a6a, #f18282, #f13636, #f21b1b);
+    @include font-variant($brand-danger,#f13636,#f13f3f);
+}
+
+.bg-white {
+    background-color: #fff;
+    color: $text-color;
+    a {
+        color: $link-color;
+        &:hover{
+            color: darken($link-color, 10%);
+        }
+    }
+    .text-muted{color: $text-muted !important;}
+    .lt,
+    .lter,
+    .dk,
+    .dker{
+        background-color: #fff;
+    }
+}
+.bg-white-only{background-color:#fff;}
+.bg-white-opacity{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.bg-black-opacity{
+    background-color: rgba(32, 43, 54, 0.5);
+}
+
+a.bg-light{
+    &:hover{
+        color: $link-color;
+    }
+}
+a.bg-primary:hover {
+    background-color: #6254b2;
+}
+
+a.text-primary:hover {
+    color: #6254b2;
+}
+
+.text-primary {
+    color: #7266ba;
+}
+
+.text-primary-lt {
+    color: #8278c2;
+}
+
+.text-primary-lter {
+    color: #9289ca;
+}
+
+.text-primary-dk {
+    color: #6254b2;
+}
+
+.text-primary-dker {
+    color: #564aa3;
+}
+
+a.bg-info:hover {
+    background-color: #19a9d5;
+}
+
+a.text-info:hover {
+    color: #19a9d5;
+}
+
+.text-info {
+    color: #23b7e5;
+}
+.btn-info.active .text-info{
+    color:#fff;
+}
+
+.text-info-lt {
+    color: #3abee8;
+}
+
+.text-info-lter {
+    color: #51c6ea;
+}
+
+.text-info-dk {
+    color: #19a9d5;
+}
+
+.text-info-dker {
+    color: #1797be;
+}
+
+a.bg-success:hover {
+    background-color: #23ad44;
+}
+
+a.text-success:hover {
+    color: #23ad44;
+}
+
+.text-success {
+    color: #27c24c;
+}
+
+.text-success-lt {
+    color: #2ed556;
+}
+
+.text-success-lter {
+    color: #43d967;
+}
+
+.text-success-dk {
+    color: #23ad44;
+}
+
+.text-success-dker {
+    color: #1e983b;
+}
+
+a.bg-warning:hover {
+    background-color: #f9d21a;
+}
+
+a.text-warning:hover {
+    color: #f9d21a;
+}
+
+.text-warning {
+    color: #fad733;
+}
+
+.text-warning-lt {
+    color: #fbdc4c;
+}
+
+.text-warning-lter {
+    color: #fbe165;
+}
+
+.text-warning-dk {
+    color: #f9d21a;
+}
+
+.text-warning-dker {
+    color: #f4ca06;
+}
+
+a.bg-danger:hover {
+    background-color: #ee3939;
+}
+
+a.text-danger:hover {
+    color: #ee3939;
+}
+
+.text-danger {
+    color: #f05050;
+}
+
+.text-danger-lt {
+    color: #f26767;
+}
+
+.text-danger-lter {
+    color: #f47f7f;
+}
+
+.text-danger-dk {
+    color: #ee3939;
+}
+
+.text-danger-dker {
+    color: #ec2121;
+}
+
+a.bg-dark:hover {
+    background-color: #2f3342;
+}
+
+a.text-dark:hover {
+    color: #2f3342;
+}
+
+.text-dark {
+    color: #3a3f51;
+}
+
+.text-dark-lt {
+    color: #454b60;
+}
+
+.text-dark-lter {
+    color: #4f566f;
+}
+
+.text-dark-dk {
+    color: #2f3342;
+}
+
+.text-dark-dker {
+    color: #252833;
+}
+
+a.bg-#000000:hover {
+    background-color: #131e25;
+}
+
+a.text-#000000:hover {
+    color: #131e25;
+}
+
+.text-#000000 {
+    color: #1c2b36;
+}
+
+.text-#000000-lt {
+    color: #253847;
+}
+
+.text-#000000-lter {
+    color: #2d4658;
+}
+
+.text-#000000-dk {
+    color: #131e25;
+}
+
+.text-#000000-dker {
+    color: #0b1014;
+}
+
+.text-white {
+    color: #fff;
+}
+.text-muted {
+    color: $text-muted;
+}
+/*--------------color.scss-------------------------*/

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="demoApp">
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS Demo UI Component</title>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap-css-only/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../dist/angular-multi-select-tree-0.1.0.css">
+
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="../dist/angular-multi-select-tree-0.1.0.js"></script>
+    <script type="text/javascript" src="../dist/angular-multi-select-tree-0.1.0.tpl.js"></script>
+</head>
+<body ng-controller="demoAppCtrl">
+
+<header>
+    <h1 class="text-center">Demo Page for the Angular Multi Select Tree...</h1>
+</header>
+
+<div>
+    <div class="container">
+
+        <div class="row">
+            <h2>Multi-select</h2>
+
+            <div class="col-md-6">
+                <multi-select-tree data-input-model="data" multi-select="true"
+                                   data-output-model="selectedItem2" data-default-label="Click here to Select..."
+                                   data-callback="selectOnly1Or2(item, selectedItems)"
+                                   data-select-only-leafs="true" data-switch-view-callback="switchViewCallback(scopeObj)"
+                                   data-switch-view-label="test1" data-switch-view="true"></multi-select-tree>
+                <br/>Selected items: {{selectedItem2}}
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

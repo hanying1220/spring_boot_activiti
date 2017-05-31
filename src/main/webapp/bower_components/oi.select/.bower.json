@@ -1,0 +1,26 @@
+{
+  "author": {
+    "name": "https://github.com/tamtakoe"
+  },
+  "name": "oi.select",
+  "version": "0.2.21",
+  "main": [
+    "./dist/select-tpls.min.js",
+    "./dist/select.min.css"
+  ],
+  "dependencies": {
+    "angular": ">=1.2",
+    "angular-sanitize": ">=1.2",
+    "angular-mocks": ">=1.2"
+  },
+  "homepage": "https://github.com/tamtakoe/oi.select",
+  "_release": "0.2.21",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.21",
+    "commit": "e0834ad1a810b97b934d2833d1808bc2bec276cc"
+  },
+  "_source": "https://github.com/tamtakoe/oi.select.git",
+  "_target": "^0.2.21",
+  "_originalSource": "oi.select"
+}

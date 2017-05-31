@@ -1,0 +1,51 @@
+.ztree{
+    padding:0;
+    width:100%;
+    li{
+        line-height:$tree-line-height;
+        a{
+            text-decoration: none;
+            color:#333;
+            &.curSelectedNode{
+                font-weight:bold;
+                color:#666;
+                padding-top: 0;
+                background-color: #e2ebf2;
+                height: $tree-line-height;
+                border: none;
+                opacity: 1;
+                border-radius:$border-radius;
+                font-size:12px;
+            }
+        }
+    }
+}
+
+//icon
+.ztree li span.button.roots_close,.ztree li span.button.center_close,.ztree li span.button.bottom_close,.ztree li span.button.root_close{
+    background-image: url("/content/images/open_tree.png");
+}
+.ztree li span.button.roots_open,.ztree li span.button.center_open,.ztree li span.button.bottom_open,.ztree li span.button.root_open{
+    background-image: url("/content/images/close_tree.png");
+}
+.ztree li span.button.roots_open,.ztree li span.button.roots_close,
+.ztree li span.button.center_open,.ztree li span.button.center_close,
+.ztree li span.button.bottom_open,.ztree li span.button.bottom_close,
+.ztree li span.button.root_open,.ztree li span.button.root_close{
+    width:14px;height:30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:14px 14px;
+}
+.ztree li span.button.ico_close,.ztree li span.button.ico_docu,.ztree li span.button.ico_open{
+    margin:0;
+    background:url("/content/images/tree_node.png") center center no-repeat;
+    width:30px;height:30px;
+}
+.ztree li span.button.ico_docu{
+    background-image:url("/content/images/tree_docu.png");
+    background-position:5px center;
+}
+.ztree li ul.line,.ztree li span.button.bottom_docu,.ztree li span.button.center_docu{
+    background:none;
+}

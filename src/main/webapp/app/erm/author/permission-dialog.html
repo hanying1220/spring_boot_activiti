@@ -1,0 +1,17 @@
+<div class="modal-body m-b">
+    <ui-tree
+        wid="permissionTree"
+        pidfield="parentId"
+        labelfield="name"
+        multiselect="true"
+        cascade="true"
+        dataProvider="treeData"
+        onBeforeExpand="beforeExpand"
+        onSelect="selectUser"
+        onCancelSelect="cancelSelectUser"
+        ></ui-tree></div>
+    <div class="modal-footer">
+        <ui-button class="btn btn-sm btn-success" icoclass="" label="保存" ng-click="savePer()"></ui-button>
+        <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消" ng-click = "closePer()"></ui-button>
+    </div>
+

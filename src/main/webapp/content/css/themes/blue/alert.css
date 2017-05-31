@@ -1,0 +1,45 @@
+/* ---------- alert ---------- */
+.wi-alert-icon {
+  font-size: 35px;
+  float: left;
+  margin-left: 15px;
+}
+.wi-alert-icon > span {
+  box-reflect: below 0 -webkit-linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, 0.3));
+  -webkit-box-reflect: below 0 -webkit-linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, 0.3));
+}
+.wi-alert-icon > span.icon-exclamation-sign {
+  color: #eeee23;
+}
+.wi-alert-icon > span.icon-ok-sign {
+  color: #37a91d;
+}
+.wi-alert-icon > span.icon-remove-sign {
+  color: #C40D0D;
+}
+.wi-alert-icon > span.icon-question-sign {
+  color: #6167cd;
+}
+.wi-alert-icon > span.icon-info-sign {
+  color: #6167cd;
+}
+.wi-alert-simple-cont {
+  min-height: 75px;
+  margin: auto 5px auto 70px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+.wi-alert-toolbar {
+  float: left;
+  margin: 0 -10px;
+  width: calc(100% + 20px);
+  padding: 5px;
+  position: relative;
+  bottom: -10px;
+  background: #ecf8ff;
+}
+.wi-alert-toolbar > .wi-btn {
+  float: right;
+  margin-right: .5em;
+  min-width: 60px;
+}

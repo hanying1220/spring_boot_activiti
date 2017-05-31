@@ -1,0 +1,28 @@
+.ui-grid-draggable-row-target {
+  opacity: 0.5 !important;
+}
+
+.ui-grid-draggable-row {
+    height: 30px;
+}
+
+.ui-grid-draggable-row-over {
+	position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px dotted #AAA;
+    }
+
+    &--above:before {
+    	top: 0;
+    }
+
+    &--below:before {
+    	bottom: 0;
+    }
+}

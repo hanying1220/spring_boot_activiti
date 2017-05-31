@@ -1,0 +1,110 @@
+<form name="demoForm" ng-controller="selectValidationController">
+    <h2>Validation</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                name="select"
+                oi-options="item.name for item in shopArr track by item.id"
+                ng-model="bundle"
+                required
+                placeholder="Select"
+                ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in shopArr track by item.id"
+ng-model="bundle"
+required
+</div>
+<div class="col-md-4"><pre>
+dirty: {{demoForm.select.$dirty}}
+invalid: {{demoForm.select.$invalid}}
+errors: {{demoForm.select.$error}}
+
+{{bundle}}
+</pre></div>
+</div>
+
+    <br/>
+
+    <p>You can validate new items if return <code>undefined</code> or <code>rejected promise</code> from <code>newItemFn</code></p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                    oi-options="item.name for item in shopArr"
+                    ng-model="bundle2"
+                    multiple
+                    oi-select-options="{
+                        newItem: 'prompt',
+                        newItemFn: 'addItem($query)'
+                    }"
+                    placeholder="Select"
+                    ></oi-select>
+        </div>
+        <div class="col-md-4">
+            <i>You can use only digit characters for new item names</i>
+        </div>
+    </div>
+
+<div class="row">
+<div class="col-md-8">
+<div hljs>
+oi-options="item.name for item in shopArr"
+ng-model="bundle2"
+multiple
+oi-select-options="{
+    newItem: 'prompt',
+    newItemFn: 'addItem($query)'
+}"
+</div>
+<div hljs>
+$scope.addItem = function(query) {
+    if (/\D/.test(query)) {
+        return;
+    }
+
+    return {name: query};
+};
+</div>
+</div>
+
+<div class="col-md-4"><pre>
+{{bundle2}}
+</pre></div>
+</div>
+
+<br/>
+
+<p>Also you can set maximum number of characters allowed in the input and minimum number of characters to prevent searching if query is too small</p>
+<div class="row">
+    <div class="col-md-8">
+        <oi-select
+                oi-options="item.name for item in shopArr"
+                ng-model="bundle3"
+                oi-select-options="{
+                    maxlength: 4,
+                    minlength: 2
+                }"
+                placeholder="Select"
+        ></oi-select>
+    </div>
+</div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in shopArr"
+ng-model="bundle3"
+oi-select-options="{
+    maxlength: 4,
+    minlength: 2
+}"
+</div>
+<div class="col-md-4"><pre>
+{{bundle3}}
+</pre></div>
+</div>
+
+</div>
+</form>

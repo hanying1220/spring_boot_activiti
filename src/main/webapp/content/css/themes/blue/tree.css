@@ -1,0 +1,40 @@
+/* ---------- tree ---------- */
+.wi-tree > li {
+  cursor: pointer;
+}
+.wi-tree-item {
+  height: 22px;
+}
+.wi-tree-item:hover {
+  color: #003f59;
+  background-color: #eaf4f9;
+}
+.wi-tree-current,
+.wi-tree-current:hover {
+  color: #ffffff;
+  background-color: #2b7797;
+}
+.wi-tree-loading {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  background: #ffffff url('images/tree/loading.gif') no-repeat center center;
+}
+.wi-tree-transparent-50 {
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+span.wi-tree-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+}
+span.wi-tree-icon[class^="icon-"],
+span.wi-tree-icon[class*=" icon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+}

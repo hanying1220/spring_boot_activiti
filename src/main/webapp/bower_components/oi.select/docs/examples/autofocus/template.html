@@ -1,0 +1,41 @@
+<div ng-controller="selectAutofocusController">
+    <h2>Autofocus</h2>
+    <p>Specifies that an input field should automatically get focus when the page loads</p>
+    <div class="row">
+        <div class="col-md-8">
+            <div tabindex="-1">
+                <oi-select
+                    oi-options="item.name for item in shopArr"
+                    tabindex="2"
+                    ng-model="bundle"
+                    placeholder="Select"
+                    ></oi-select>
+            </div>
+            <oi-select
+                oi-options="item.name for item in shopArr"
+                autofocus
+                tabindex="1"
+                ng-model="bundle"
+                placeholder="Select"
+                ></oi-select>
+            <oi-select
+                oi-options="item.name for item in shopArr track by item.id"
+                tabindex="3"
+                ng-model="bundle"
+                placeholder="Select"
+                ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in shopArr"
+ng-model="bundle"
+autofocus
+tabindex="1"
+</div>
+<div class="col-md-4"><pre>
+{{bundle}}
+</pre></div>
+</div>
+</div>

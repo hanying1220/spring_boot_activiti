@@ -1,0 +1,85 @@
+<div ng-controller="selectFilteredController">
+    <h2>Filtered</h2>
+    <p>Filter dropdown list</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                oi-options="item for item in shopArrShort | limitTo: 3 | orderBy"
+                ng-model="bundle1"
+                multiple
+                placeholder="Select"
+                ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item for item in shopArrShort | limitTo: 3 | orderBy"
+ng-model="bundle1"
+multiple
+</div>
+<div class="col-md-4"><pre>
+{{bundle1}}
+</pre></div>
+</div>
+
+    <p>For filter by other fields use default <code>oiSelectAscSort</code> filter with extra params</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                    oi-options="item.name for item in shopArr track by item.id"
+                    ng-model="bundle2"
+                    oi-select-options="{
+                        listFilter: 'oiSelectAscSort:[\'id\', \'category\']'
+                    }"
+                    multiple
+                    placeholder="Select"
+                    ></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in shopArr track by item.id"
+ng-model="bundle2"
+oi-select-options="{
+    listFilter: 'oiSelectAscSort:[\'id\', \'category\']'
+}"
+multiple
+</div>
+<div class="col-md-4"><pre>
+{{bundle2}}
+</pre></div>
+</div>
+
+<p>You can use <code>oiSelectAscSort:true</code> for show original list sorted by ASC</p>
+<div class="row">
+    <div class="col-md-8">
+        <oi-select
+                oi-options="item.name for item in shopArr track by item.id"
+                ng-model="bundle3"
+                oi-select-options="{
+                    listFilter: 'oiSelectAscSort:true'
+                }"
+                multiple
+                placeholder="Select"
+        ></oi-select>
+    </div>
+</div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in shopArr track by item.id"
+ng-model="bundle3"
+oi-select-options="{
+    listFilter: 'oiSelectAscSort:true'
+}"
+multiple
+</div>
+<div class="col-md-4"><pre>
+{{bundle3}}
+</pre></div>
+</div>
+
+<p>Also you can use both of variants <code>oiSelectAscSort:{fields: [\'id\', \'category\'], all: true}</code></p>
+</div>

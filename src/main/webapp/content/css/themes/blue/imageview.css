@@ -1,0 +1,131 @@
+/* ---------- imageview ---------- */
+.wi-imageview-close,
+.wi-imageview-ctrl-prev,
+.wi-imageview-ctrl-next,
+.wi-imageview-zoomin,
+.wi-imageview-zoomout,
+.wi-imageview-reset,
+.wi-imageview-toleft,
+.wi-imageview-toright,
+.wi-imageview-save,
+.wi-imageview-full,
+.wi-imageview-origin {
+  background-image: url('images/imageview/ctrls.png');
+  cursor: pointer;
+}
+.wi-imageview {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.wi-imageview-picbox {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+}
+.wi-imageview-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-position: -75px -50px;
+  background-color: rgba(0, 0, 0, 0.01);
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+.wi-imageview-close:hover {
+  background-color: #f00;
+  border-radius: 24px;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.wi-imageview-pic {
+  position: relative;
+  overflow: hidden;
+  background: center center no-repeat;
+  border-radius: 5px;
+  border: solid 2px rgba(0, 0, 0, 0.75);
+}
+.wi-imageview-pic-loading {
+  background-image: url('images/imageview/loading.gif');
+}
+.wi-imageview-pic-error {
+  background-image: url('images/imageview/nopic.gif');
+}
+.wi-imageview-ctrl {
+  position: absolute;
+  top: 50%;
+  width: 26px;
+  height: 44px;
+  margin-top: -22px;
+}
+.wi-imageview-ctrl-prev {
+  left: 15px;
+  background-position: -125px -2px;
+}
+.wi-imageview-ctrl-prev:hover {
+  background-position: -151px -2px;
+}
+.wi-imageview-ctrl-next {
+  right: 15px;
+  background-position: -125px -47px;
+}
+.wi-imageview-ctrl-next:hover {
+  background-position: -151px -47px;
+}
+.wi-imageview-toolbar {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  margin-left: -150px;
+  width: 300px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 5px 0;
+  border-radius: 10px 10px 0 0;
+}
+.wi-imageview-toolbar a {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+.wi-imageview-toolbar a:hover {
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.wi-imageview-toolbar a:not(:last-child) {
+  margin-right: 5px;
+}
+a.wi-imageview-zoomout {
+  background-position: 0 0;
+}
+a.wi-imageview-zoomin {
+  background-position: -25px 0;
+}
+a.wi-imageview-reset {
+  background-position: -100px 0;
+}
+a.wi-imageview-toleft {
+  background-position: -50px 0;
+}
+a.wi-imageview-toright {
+  background-position: -75px 0;
+}
+a.wi-imageview-save {
+  background-position: -50px -25px;
+}
+a.wi-imageview-full {
+  background-position: -25px -25px;
+}
+a.wi-imageview-origin {
+  background-position: 0 -25px;
+}

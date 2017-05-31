@@ -1,0 +1,8 @@
+<li class="wi-tab"
+    ng-class="{'wi-tab-active': active, 'wi-tab-disabled': disable, 'wi-tab-hasclose': _closeable}"
+    ng-click="select()">
+    <span class="icon-remove" ng-click="close($event)"></span>
+    <div class="wi-tabhead-cont" wi-tab-heading-transclude>
+        <img class="wi-tab-icon" ng-src="{{data.icon}}" ng-if="data.icon"/>{{heading}}
+    </div>
+</li>

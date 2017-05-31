@@ -1,0 +1,33 @@
+/* ---------- accordion ---------- */
+.wi-accordion {
+  border: solid 1px #94c0d2;
+  border-top: none;
+}
+.wi-accordion-group {
+  background-color: #ffffff;
+}
+.wi-accordion-head {
+  padding: 0 .5em;
+  font-size: 15px;
+  border-top: solid 1px #94c0d2;
+  background-color: #daecf4;
+  color: #003f59;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wi-accordion-head:hover {
+  background-color: #ffd256;
+  color: #333333;
+}
+.wi-accordion-disabled {
+  color: #64a1bb;
+}
+.wi-accordion-panel {
+  border-top: solid 1px #94c0d2;
+}
+.wi-accordion-cont {
+  padding: 10px;
+  overflow: auto;
+}

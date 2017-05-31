@@ -1,0 +1,31 @@
+<form class="form-horizontal w5c-form demo-form" role="form" name="validateForm" w5c-form-validate="vm1.validateOptions">
+    <div class="modal-body">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="key">KEY<a class="text-muted"style="color: #fa0000">*</a></label>
+                <div class="col-sm-9 controls" >
+                    <input class="form-control" id="key" name="key" ng-model="vm1.model.key" ng-pattern="/[a-zA-Z]$/"
+                           type="text" placeholder="" required=""/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="name">名称<a class="text-muted"style="color: #fa0000">*</a></label>
+                <div class="col-sm-9 controls" >
+                    <input class="form-control" id="name" name="name" ng-model="vm1.model.name"
+                           type="text" placeholder="" required=""/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="description">描述</label>
+                <div class="col-sm-9 controls" >
+                    <input class="form-control" id="description" name="description" ng-model="vm1.model.description"
+                           type="text" placeholder=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <ui-button class="btn btn-sm btn-success" icoclass="" label="确定" w5c-form-submit="vm1.addModel()"></ui-button>
+        <ui-button class="btn btn-sm btn-warning" icoclass="" label="取消" ng-click = "modelClose()"></ui-button>
+    </div>
+</form>

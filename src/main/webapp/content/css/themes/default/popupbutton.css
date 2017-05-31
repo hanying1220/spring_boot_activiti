@@ -1,0 +1,30 @@
+/* ---------- popupbutton ---------- */
+.wi-popupbutton {
+  background: transparent;
+  display: inline-block;
+  padding: 0;
+}
+.wi-popupbutton-content {
+  width: 100%;
+}
+.wi-popupbutton-content:not(:last-child) {
+  /* 当有 arrow 时修改 content 的宽 */
+  float: left;
+  width: calc(100% - 23px);
+}
+.wi-popupbutton > input:focus,
+.wi-popupbutton > button:focus {
+  outline: none;
+}
+.wi-popupbutton-arrow {
+  float: left;
+  width: 23px;
+  border-left: none;
+}
+.wi-popupbutton-arrow > .icon-chevron-down {
+  line-height: .8;
+  vertical-align: middle;
+}
+.wi-popupbutton-menu {
+  overflow-y: auto;
+}

@@ -1,0 +1,585 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">表单布局</h1>
+</div>
+<div class="wrapper-md" ng-controller="FormDemoCtrl">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">宽高固定</div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label class="i-checks">
+                                <input type="checkbox" checked disabled><i></i> Check me out
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">布局自适应表单</div>
+                <div class="panel-body">
+                    <form class="bs-example form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-10">
+                                <input type="email" class="form-control" placeholder="Email">
+                                <span class="help-block m-b-none">Example block-level help text here.</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Password</label>
+                            <div class="col-lg-10">
+                                <input type="password" class="form-control" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <div class="checkbox">
+                                    <label class="i-checks">
+                                        <input type="checkbox" checked><i></i> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button type="submit" class="btn btn-sm btn-info">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">
+                    一排放置
+                </div>
+                <div class="panel-body">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputPassword2">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                        </div>
+                        <div class="checkbox m-l m-r-xs">
+                            <label class="i-checks">
+                                <input type="checkbox"><i></i> Remember me
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-info">Sign in</button>
+                        <!--<span ng-controller="ModalDemoCtrl">
+                          <script type="text/ng-template" id="myModalContent.html">
+                              <div ng-include="'tpl/modal.form.html'"></div>
+                          </script>
+                          <button class="btn btn-success" ng-click="open('lg')">Form in a modal</button>
+                        </span>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <form name="form" class="form-validation">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="h4">注册</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" ng-model="user.name" ng-pattern="/^[a-zA-Z0-9]{4,10}$/" required placeholder="(allow 'a-zA-Z0-9', 4-10 length)">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" ng-model="user.email" required >
+                        </div>
+                        <div class="form-group pull-in clearfix">
+                            <div class="col-sm-6">
+                                <label>Enter password</label>
+                                <input type="password" class="form-control" name="password" ng-model="password" required >
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Confirm password</label>
+                                <input type="password" class="form-control" name="confirm_password" required ng-model="confirm_password" ui-validate=" '$value==password' " ui-validate-watch=" 'password' ">
+                                <span ng-show='form.confirm_password.$error.validator'>Passwords do not match!</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" placeholder="(XXX) XXXX XXX" ng-model="phone" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/" required >
+                        </div>
+                        <div class="checkbox">
+                            <label class="i-checks">
+                                <input type="checkbox" ng-model="agree" required><i></i> I agree to the <a href class="text-info">Terms of Service</a>
+                            </label>
+                        </div>
+                    </div>
+                    <footer class="panel-footer text-right bg-light lter">
+                        <button type="submit" class="btn btn-normal btn-success" ng-disabled="form.$invalid">Submit</button>
+                    </footer>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <form name="form-contact" class="form-validation">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="h4">个人资料</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group pull-in clearfix">
+                            <div class="col-sm-6">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Name" ng-model="contact.name" required >
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="Enter email" ng-model="contact.email" required >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Your website</label>
+                            <input type="url" class="form-control" placeholder="http://" ng-model="contact.url" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea class="form-control" rows="6" placeholder="Type your message"></textarea>
+                        </div>
+                    </div>
+                    <footer class="panel-footer text-right bg-light lter">
+                        <button type="submit" class="btn btn-normal btn-success">Submit</button>
+                    </footer>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <form name="formValidate" class="form-horizontal form-validation">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>固定宽高</strong>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Required</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="required field" ng-model="f.a" required >
+                                <select class="form-control m-t" ng-model="f.b" required >
+                                    <option value="">Please choose</option>
+                                    <option value="foo">Foo</option>
+                                    <option value="bar">Bar</option>
+                                </select>
+                                <label class="checkbox i-checks">
+                                    <input type="checkbox" ng-model="f.c" required><i></i> Agree to the policy
+                                </label>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Min Length</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="minlength = 5" ng-model="f.d" ng-minlength="5" required>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Max Length</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="maxlength = 5" ng-model="f.e" ng-maxlength="5" required>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Range Length</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="minlength = 5 maxlength = 10" ng-model="f.f" ng-minlength="5" ng-maxlength="10" required>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Min</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" placeholder="min = 5" ng-model="f.g" ui-validate=" '$value >= 5' " required>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Max</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" placeholder="max = 5" ng-model="f.h" ui-validate=" '$value <= 5' " required>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Range</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" placeholder="min = 5 max = 10" ng-model="f.i" ui-validate="{ a:'$value >= 5', b:'$value <= 10' }" required>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">RegExp</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="hexa color code" ng-model="f.j" ng-pattern="/^#(?:[0-9a-fA-F]{3}){1,2}$/" required>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="panel-footer text-right bg-light lter">
+                        <button type="submit" class="btn btn-normal btn-success">Submit</button>
+                    </footer>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <form name="forma" class="form-horizontal form-validation">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>窗口自适应</strong>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" placeholder="email" ng-model="g.a" required >
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Url</label>
+                            <div class="col-sm-9">
+                                <input type="url" class="form-control" placeholder="http://" ng-model="g.b" required >
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Digits</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="digits" ng-model="g.c" ng-pattern="/^[0-9]+$/" required >
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Number</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" placeholder="number" ng-model="g.d" required >
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Alphanum</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="alphanumeric string" ng-model="g.e" ng-pattern="/^[a-zA-Z]+$/" required >
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Date Iso</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="YYYY-MM-DD" ng-model="g.f" ng-pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/" required >
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Phone</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" placeholder="(XXX) XXXX XXX" ng-model="g.g" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/" required >
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Equal To</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6"><input type="text" name="foo" class="form-control" ng-model="g.h" required></div>
+                                    <div class="col-sm-6"><input type="text" name="confirm_foo" class="form-control" required ng-model="g.i" ui-validate=" '$value==g.h' " ui-validate-watch=" 'g.h' ">
+                                        <span ng-show='forma.confirm_foo.$error.validator'>Not match!</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Black-list</label>
+                            <div class="col-sm-9">
+                                <input type="email" name="email" class="form-control" placeholder="input 'bad@domain.com'" ng-model="g.j" ui-validate="{blacklist : 'notBlackListed($value)' }" required>
+                                <span ng-show='forma.email.$error.blacklist'>This e-mail is black-listed!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="panel-footer text-right bg-light lter">
+                        <button type="submit" class="btn btn-success btn-normal">Submit</button>
+                    </footer>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">上传图片</h1>
+</div>
+<div class="wrapper-md">
+    <div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="FileUploadCtrl"  nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
+        <div class="col w-lg bg-light b-r bg-auto">
+            <div class="wrapper-md dker b-b">
+                <h3 class="m-n font-thin">Select files</h3>
+            </div>
+            <div class="wrapper-md">
+                <div ng-show="uploader.isHTML5" class="m-b-md">
+                    <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                    <div class="b-a b-2x b-dashed wrapper-lg bg-white text-center m-b" nv-file-over="" over-class="b-info" uploader="uploader">
+                        Base drop zone
+                    </div>
+
+                    <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                    <div nv-file-drop="" uploader="uploader" options="{ url: '/foo' }">
+                        <div nv-file-over="" uploader="uploader" over-class="b-danger" class="b-a b-2x b-dashed wrapper-lg lter text-center">
+                            Another drop zone with its own settings
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                <p>Multiple</p>
+                <input type="file" nv-file-select="" uploader="uploader" multiple  />
+
+                <p class="m-t-md">Single</p>
+                <input type="file" nv-file-select="" uploader="uploader" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="wrapper-md bg-light dk b-b">
+                <span class="pull-right m-t-xs">Queue length: <b class="badge bg-info">{{ uploader.queue.length }}</b></span>
+                <h3 class="m-n font-thin">Upload queue</h3>
+            </div>
+            <div class="wrapper-md">
+                <table class="table bg-white-only b-a">
+                    <thead>
+                    <tr>
+                        <th width="50%">Name</th>
+                        <th ng-show="uploader.isHTML5">Size</th>
+                        <th ng-show="uploader.isHTML5">Progress</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in uploader.queue">
+                        <td><strong>{{ item.file.name }}</strong></td>
+                        <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                        <td ng-show="uploader.isHTML5">
+                            <div class="progress progress-sm m-b-none m-t-xs">
+                                <div class="progress-bar bg-info" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <span ng-show="item.isSuccess" class="text-success"><i class="glyphicon glyphicon-ok"></i></span>
+                            <span ng-show="item.isCancel" class="text-warning"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                            <span ng-show="item.isError" class="text-danger"><i class="glyphicon glyphicon-remove"></i></span>
+                        </td>
+                        <td nowrap>
+                            <button type="button" class="btn btn-default btn-normal" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                Upload
+                            </button>
+                            <button type="button" class="btn btn-default btn-normal" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                Cancel
+                            </button>
+                            <button type="button" class="btn btn-default btn-normal" ng-click="item.remove()">
+                                Remove
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <div>
+                        <p>Queue progress:</p>
+                        <div class="progress bg-light dker" style="">
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-addon btn-success btn-lg" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                        <i class="fa fa-arrow-circle-o-up"></i> Upload all
+                    </button>
+                    <button type="button" class="btn btn-addon btn-warning btn-lg" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                        <i class="fa fa-ban"></i> Cancel all
+                    </button>
+                    <button type="button" class="btn btn-addon btn-danger btn-lg" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                        <i class="fa fa-trash-o"></i> Remove all
+                    </button>
+                    <p class="text-muted m-t-xl">Note: upload.php file included, files will be uploaded to "src/js/controllers/uploads".</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">下拉</h1>
+</div>
+<div class="wrapper-md">
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <label class="col-sm-3 control-label text-left">Address</label>
+                <div class="col-sm-6">
+
+                    <ui-select ng-model="address.selected"
+                               theme="bootstrap"
+                               ng-disabled="disabled"
+                               reset-search-input="false"
+                               style="width: 300px;">
+                        <ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+                        <ui-select-choices repeat="address in addresses track by $index"
+                                           refresh="refreshAddresses($select.search)"
+                                           refresh-delay="0">
+                            <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                    <span class="help-block">{{address.selected.formatted_address}}</span>
+                </div>
+            </div>
+            <!--<div class="form-group">
+                <label class="col-sm-3 control-label text-left">Default</label>
+                <div class="col-sm-6">
+
+                    <ui-select ng-model="person.selected" theme="bootstrap">
+                        <ui-select-match placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="item in people | filter: $select.search">
+                            <div ng-bind-html="item.name | highlight: $select.search"></div>
+                            <small ng-bind-html="item.email | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
+
+                </div>
+            </div>-->
+
+           <!-- <div class="form-group">
+                <label class="col-sm-3 control-label text-left">Grouped</label>
+                <div class="col-sm-6">
+
+                    <ui-select ng-model="person.selected" theme="bootstrap">
+                        <ui-select-match placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices group-by="'group'" repeat="item in people | filter: $select.search">
+                            <span ng-bind-html="item.name | highlight: $select.search"></span>
+                            <small ng-bind-html="item.email | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
+
+                </div>
+            </div>-->
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label text-left">Grouped using a string</label>
+                <div class="col-sm-6">
+
+                    <ui-select ng-model="person.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
+                        <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices group-by="'country'" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                            <div ng-bind-html="person.name | highlight: $select.search"></div>
+                            <small>
+                                email: {{person.email}}
+                                age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                            </small>
+                        </ui-select-choices>
+                    </ui-select>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label text-left">Group using a function</label>
+                <div class="col-sm-6">
+
+                    <ui-select ng-model="person.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
+                        <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices group-by="someGroupFn" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                            <div ng-bind-html="person.name | highlight: $select.search"></div>
+                            <small>
+                                email: {{person.email}}
+                                age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                            </small>
+                        </ui-select-choices>
+                    </ui-select>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label text-left">With a clear button</label>
+                <div class="col-sm-6">
+                    <div class="input-group">
+
+                        <ui-select ng-model="person.selected" theme="bootstrap">
+                            <ui-select-match placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+                            <ui-select-choices repeat="item in people | filter: $select.search">
+                                <span ng-bind-html="item.name | highlight: $select.search"></span>
+                                <small ng-bind-html="item.email | highlight: $select.search"></small>
+                            </ui-select-choices>
+                        </ui-select>
+
+            <span class="input-group-btn">
+              <button ng-click="person.selected = undefined" class="btn btn-default">
+                  <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label text-left">Multiple</label>
+                <div class="col-sm-6">
+
+                    <ui-select multiple ng-model="multipleDemo.selectedPeopleWithGroupBy" theme="bootstrap" ng-disabled="disabled">
+                        <ui-select-match placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+                        <ui-select-choices group-by="someGroupFn" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+                            <div ng-bind-html="person.name | highlight: $select.search"></div>
+                            <small>
+                                email: {{person.email}}
+                                age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                            </small>
+                        </ui-select-choices>
+                    </ui-select>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label text-left">Disabled</label>
+                <div class="col-sm-6">
+
+                    <ui-select ng-model="person.selected" theme="bootstrap" ng-disabled="true">
+                        <ui-select-match placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="item in people | filter: $select.search">
+                            <div ng-bind-html="item.name | highlight: $select.search"></div>
+                            <small ng-bind-html="item.email | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
+
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
